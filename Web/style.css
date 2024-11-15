@@ -12,3 +12,36 @@ body {
     font-family: 'Josefin Sans', sans-serif;
   }
   
+  /* PAGE HOME */
+  
+  .trending-recipes {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .trending-recipes h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+  
+  .trending-recipes p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    color: #666;
+  }
+  
+  .trending-recipes .row .col-md-3 {
+    margin-top: 20px;
+  }
+  
+  .trending-recipes .img-fluid {
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .trending-recipes .col-md-3 p {
+    font-size: 0.9rem;
+    color: #333;
+  }
+  

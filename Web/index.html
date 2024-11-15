@@ -46,6 +46,16 @@
   <div ng-show="currentPage === 'home'" class="container">
     <h2>Welcome to Thrive Soul</h2>
     <p>Explore a healthier, balanced lifestyle through beauty, food, therapy, and more.</p>
+    <div class="trending-recipes mt-5">
+      <h2>Trending Recipes</h2>
+      <p>Check out the recipes our readers love most!</p>
+      <div class="row">
+        <div class="col-md-3" ng-repeat="recipe in trendingRecipes">
+          <img ng-src="{{recipe.imgSrc}}" class="img-fluid" alt="Recipe Image">
+          <p>{{recipe.description}}</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div ng-show="currentPage === 'about'" class="container">

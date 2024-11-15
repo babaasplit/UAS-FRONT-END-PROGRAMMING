@@ -7,6 +7,25 @@ app.controller('MainController', function($scope) {
     $scope.currentPage = page;
   };
 
+  $scope.trendingRecipes = [
+    {
+      imgSrc: 'images/recipe1.jpg',
+      description: 'Craft Your Own Signature Scents with Essential Oil Blends'
+    },
+    {
+      imgSrc: 'images/recipe2.jpg',
+      description: 'Natural Acne Solutions: 12 DIY Masks for Clearer Skin'
+    },
+    {
+      imgSrc: 'images/recipe3.jpg',
+      description: 'Exfoliate Naturally: Homemade Face Scrubs Using Pantry Staples'
+    },
+    {
+      imgSrc: 'images/recipe4.jpg',
+      description: 'Fresh Juicing Guide: 3 Simple Recipes for a Healthy Boost'
+    }
+  ];
+  
   // CRUD logic for Beauty Tips
   $scope.beautyTips = [];
   $scope.isEditingBeauty = false;
