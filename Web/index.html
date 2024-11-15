@@ -61,7 +61,24 @@
   <div ng-show="currentPage === 'about'" class="container">
     <h2>About Thrive Soul</h2>
     <p>We believe in nurturing the mind, body, and soul with natural and holistic approaches.</p>
+    <div class="row">
+      <div class="col-md-8">
+        <img ng-src="{{About1.imgSrc}}" class="img-fluid" alt="About Image"> 
+        <p>{{recipe.description}}</p>
+      </div>
+      <div class="col-md-3 grey-box">
+          <div class="profile-box">
+            <div class="image-container">
+              <img ng-src="{{About2.imgSrc}}" class="img-fluid2" alt="About Image"> 
+            </div>
+            
+            <p>{{recipe.description}}</p>
+              <h3>Hi, I'm Stephanie!</h3>
+              <p>Welcome to Thrive Soul, where you'll learn all about nurturing a balanced life with natural wellness.</p>
+          </div>
+      </div>
   </div>
+</div>
 
   <div ng-show="currentPage === 'beauty'" class="container">
     <h2>Beauty Tips</h2>

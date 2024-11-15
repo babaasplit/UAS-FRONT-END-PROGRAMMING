@@ -45,3 +45,28 @@ body {
     color: #333;
   }
   
+  /* Bagian About */
+  .grey-box {
+    background-color:#E5E4E2;
+    width: 250px;
+  }
+  .image-container {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .profile-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-box .img-fluid2 {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
+  }

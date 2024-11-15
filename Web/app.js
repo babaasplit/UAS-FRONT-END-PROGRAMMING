@@ -25,6 +25,15 @@ app.controller('MainController', function($scope) {
       description: 'Fresh Juicing Guide: 3 Simple Recipes for a Healthy Boost'
     }
   ];
+  // Image About
+  $scope.About1 = {
+    imgSrc: 'images/about1.jpg'  
+};
+$scope.About2 = {
+  imgSrc: 'images/about2.jpg'  
+};
+
+
   
   // CRUD logic for Beauty Tips
   $scope.beautyTips = [];
@@ -91,3 +100,5 @@ app.controller('MainController', function($scope) {
     $scope.subscriber = {}; // Clear form after submission
   };
 });
+
+
