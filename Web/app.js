@@ -23,18 +23,55 @@ app.controller('MainController', function($scope) {
     {
       imgSrc: 'images/recipe4.jpg',
       description: 'Fresh Juicing Guide: 3 Simple Recipes for a Healthy Boost'
-    }
+    },
+    {
+      imgSrc: 'images/recipe5.jpg',
+      description: 'Homemade Herbal Teas: Soothing Blends for Relaxation'
+    },
+    {
+      imgSrc: 'images/recipe6.jpg',
+      description: 'DIY Lip Balm: Nourish Your Lips Naturally'
+    },
+    {
+      imgSrc: 'images/recipe7.jpg',
+      description: 'Healthy Smoothie Bowls: Toppings and Ideas for a Vibrant Breakfast'
+    },
+    {
+      imgSrc: 'images/recipe8.jpg',
+      description: 'Plant-Based Meal Prep: Quick and Easy Vegan Recipes'
+    },
   ];
-  // Image About
-  $scope.About1 = {
-    imgSrc: 'images/about1.jpg'  
-};
-$scope.About2 = {
-  imgSrc: 'images/about2.jpg'  
-};
 
+   // Beauty Recipes Data
+   $scope.beautyRecipes = [
+    { imgSrc: 'images/beauty1.jpg', description: '10 DIY Travel Beauty Recipes to Pack for Your Next Trip' },
+    { imgSrc: 'images/beauty2.jpg', description: '5 Face Massage Techniques for a Youthful Glow' },
+    { imgSrc: 'images/beauty3.jpg', description: 'What You Need to Know About the Viral Skin Flooding Trend' },
+    { imgSrc: 'images/beauty4.jpg', description: 'The Benefits of Green Tea for Your Skin and Hair' }
+  ];
 
-  
+  $scope.haircareRecipes = [
+    { imgSrc: 'images/haircare1.jpg', description: '10 DIY Hair Masks to Repair Damaged Hair' },
+    { imgSrc: 'images/haircare2.jpg', description: '5 Natural Oils for Hair Growth and Thickness' },
+    { imgSrc: 'images/haircare3.jpg', description: 'How to Make Your Own Dry Shampoo at Home' },
+    { imgSrc: 'images/haircare4.jpg', description: 'The Best Scalp Treatments for Healthy Hair' },
+  ];
+
+  $scope.goodForYouRecipes = [
+    { imgSrc: 'images/good1.jpg', description: 'Avocado Toast with Egg - A perfect healthy breakfast!'},
+    { imgSrc: 'images/good2.jpg', description: 'Berry Smoothie Bowl - Refreshing and full of antioxidants.'},
+    { imgSrc: 'images/good3.jpg', description: 'Quinoa Salad - Packed with protein and fresh veggies.'},
+    { imgSrc: 'images/good4.jpg', description: 'Dark Chocolate Energy Bites - A guilt-free sweet treat.'}
+  ];
+
+    // Image About
+    $scope.About1 = {
+      imgSrc: 'images/about1.jpg'  
+  };
+  $scope.About2 = {
+    imgSrc: 'images/about2.jpg'  
+  };
+
   // CRUD logic for Beauty Tips
   $scope.beautyTips = [];
   $scope.isEditingBeauty = false;
@@ -47,7 +84,7 @@ $scope.About2 = {
     } else {
       // Add new beauty tip
       $scope.beautyTips.push(angular.copy($scope.beautyItem));
-    }
+    } 
     $scope.clearBeautyForm();
   };
   $scope.deleteBeauty = function(item) {
@@ -100,5 +137,3 @@ $scope.About2 = {
     $scope.subscriber = {}; // Clear form after submission
   };
 });
-
-

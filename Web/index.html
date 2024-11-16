@@ -42,22 +42,64 @@
     </div>
   </nav>
 
-  <!-- Page Content -->
-  <div ng-show="currentPage === 'home'" class="container">
-    <h2>Welcome to Thrive Soul</h2>
-    <p>Explore a healthier, balanced lifestyle through beauty, food, therapy, and more.</p>
-    <div class="trending-recipes mt-5">
-      <h2>Trending Recipes</h2>
-      <p>Check out the recipes our readers love most!</p>
-      <div class="row">
-        <div class="col-md-3" ng-repeat="recipe in trendingRecipes">
-          <img ng-src="{{recipe.imgSrc}}" class="img-fluid" alt="Recipe Image">
-          <p>{{recipe.description}}</p>
-        </div>
+  <!-- Page HOME -->
+<div ng-show="currentPage === 'home'" class="container">
+  <h2>Welcome to Thrive Soul</h2>
+  <p>Explore a healthier, balanced lifestyle through beauty, food, therapy, and more.</p>
+
+  <!-- Trending Recipes -->
+  <div class="trending-recipes mt-5">
+    <h2>Trending Recipes</h2>
+    <p>Check out the recipes our readers love most!</p>
+    <div class="row">
+      <div class="col-md-3" ng-repeat="recipe in trendingRecipes">
+        <img ng-src="{{recipe.imgSrc}}" class="img-fluid" alt="Recipe Image">
+        <p>{{recipe.description}}</p>
       </div>
     </div>
   </div>
+</div>
 
+<!-- Beauty Recipes Section (Hanya Tampil di Home) -->
+<div ng-show="currentPage === 'home'" class="beauty-recipes mt-5">
+  <h2>Beauty Recipes</h2>
+  <p>Revolutionize your beauty routine by opting for DIY skincare formulas, bath soaks, and body recipes.</p>
+  <div class="row">
+    <div class="col-md-3" ng-repeat="recipe in beautyRecipes">
+      <img ng-src="{{recipe.imgSrc}}" class="img-fluid" alt="Beauty Recipe Image">
+      <p>{{recipe.description}}</p>
+    </div>
+  </div>
+</div>
+
+<!-- Haircare Recipes Section (Hanya Tampil di Home) -->
+<div ng-show="currentPage === 'home'" class="haircare-recipes mt-5">
+  <h2>Haircare Recipes</h2>
+  <p>Discover the best DIY haircare formulas to nourish, repair, and style your hair naturally.</p>
+  <div class="row">
+    <div class="col-md-3" ng-repeat="recipe in haircareRecipes">
+      <img ng-src="{{recipe.imgSrc}}" class="img-fluid" alt="Haircare Recipe Image">
+      <p>{{recipe.description}}</p>
+    </div>
+  </div>
+</div>
+
+<!-- Good for You Recipes Section (Hanya Tampil di Home) -->
+<div ng-show="currentPage === 'home'" class="good-for-you-recipes mt-5">
+  <h2>Good for You Recipes</h2>
+  <p>Explore healthy and delicious recipes that are good for your body and soul.</p>
+  <div class="row">
+    <div class="col-md-3" ng-repeat="recipe in goodForYouRecipes">
+      <img ng-src="{{recipe.imgSrc}}" class="img-fluid" alt="Good for You Recipe Image">
+      <p>{{recipe.description}}</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <!-- Page ABOUT-->
   <div ng-show="currentPage === 'about'" class="container">
     <h2>About Thrive Soul</h2>
     <p>We believe in nurturing the mind, body, and soul with natural and holistic approaches.</p>
@@ -79,7 +121,8 @@
       </div>
   </div>
 </div>
-
+  
+  <!-- Page BEAUTY-->
   <div ng-show="currentPage === 'beauty'" class="container">
     <h2>Beauty Tips</h2>
     <form ng-submit="addOrUpdateBeauty()" class="form-inline">
@@ -95,6 +138,7 @@
     </ul>
   </div>
 
+  <!-- Page FOOD-->
   <div ng-show="currentPage === 'food'" class="container">
     <h2>Food Recipes</h2>
     <form ng-submit="addOrUpdateFood()" class="form-inline">
@@ -110,11 +154,13 @@
     </ul>
   </div>
 
+    <!-- Page THERAPY-->
   <div ng-show="currentPage === 'therapy'" class="container">
     <h2>Therapy</h2>
     <p>Explore therapeutic practices for mental wellness, like yoga, meditation, and mindfulness.</p>
   </div>
 
+  <!-- Page SUBSCRIBE-->  
   <div ng-show="currentPage === 'subscribe'" class="container">
     <h2>Subscribe</h2>
     <form ng-submit="subscribe()" class="form-inline">

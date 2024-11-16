@@ -13,7 +13,6 @@ body {
   }
   
   /* PAGE HOME */
-  
   .trending-recipes {
     text-align: center;
     margin-top: 50px;
@@ -44,6 +43,160 @@ body {
     font-size: 0.9rem;
     color: #333;
   }
+
+  .beauty-recipes {
+    text-align: center;
+    padding: 30px 20px;
+  }
+  
+  .beauty-recipes h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  .beauty-recipes p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 25px;
+  }
+  
+  .beauty-recipes .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .beauty-recipes .col-md-3 {
+    flex: 1 1 calc(20% - 20px); /* Mengatur kolom agar 5 dalam satu baris */
+    max-width: calc(20% - 20px); /* Membatasi lebar maksimal */
+    margin-bottom: 20px;
+  }
+  
+  .beauty-recipes img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .beauty-recipes img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .beauty-recipes .col-md-3 p {
+    text-align: center;
+    margin: 10px 0 0;
+    font-size: 0.9rem; /* Mengecilkan ukuran teks sedikit */
+  }
+
+  .haircare-recipes {
+    text-align: center;
+    padding: 30px 20px;
+  }
+  
+  .haircare-recipes h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  .haircare-recipes p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 25px;
+  }
+  
+  .haircare-recipes .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .haircare-recipes .col-md-3 {
+    flex: 1 1 calc(20% - 20px); /* Adjusts columns to fit 5 in one row */
+    max-width: calc(20% - 20px); /* Limits maximum width */
+    margin-bottom: 20px;
+  }
+  
+  .haircare-recipes img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .haircare-recipes img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .haircare-recipes .col-md-3 p {
+    text-align: center;
+    margin: 10px 0 0;
+    font-size: 0.9rem; /* Slightly reduced font size */
+  }  
+
+  .good-for-you-recipes {
+    text-align: center;
+    padding: 30px 20px;
+  }
+  
+  .good-for-you-recipes h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  .good-for-you-recipes p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 25px;
+  }
+  
+  .good-for-you-recipes .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .good-for-you-recipes .col-md-3 {
+    flex: 1 1 calc(20% - 20px); /* Adjusts columns to fit 5 in one row */
+    max-width: calc(20% - 20px); /* Limits maximum width */
+    margin-bottom: 20px;
+  }
+  
+  .good-for-you-recipes img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .good-for-you-recipes img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .good-for-you-recipes .col-md-3 p {
+    text-align: center;
+    margin: 10px 0 0;
+    font-size: 0.9rem; /* Slightly reduced font size */
+  }
+  
   
   /* Bagian About */
   .grey-box {
