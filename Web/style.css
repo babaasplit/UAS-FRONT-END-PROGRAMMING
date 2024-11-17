@@ -12,6 +12,7 @@ body {
     font-family: 'Josefin Sans', sans-serif;
   }
   
+  
   /* PAGE HOME */
   .trending-recipes {
     text-align: center;
@@ -223,3 +224,280 @@ body {
     object-position: center;
     border-radius: 100%;
   }
+
+/* SUBSCRIBE Modal container */
+/* Modal background */
+.modal {
+  display: none; /* Sembunyikan modal secara default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Latar belakang transparan gelap */
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Pastikan modal muncul di atas elemen lainnya */
+}
+
+/* Konten modal */
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  position: relative;
+}
+
+/* Tombol tutup */
+.modal .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Tombol subscribe */
+.btn-primary {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #45a049;
+}
+
+
+
+  /* LOGIN PAGE */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f7f7f7; /* Warna latar belakang sesuai tema */
+}
+
+.login-box {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.login-box h2 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.login-box form {
+  margin-bottom: 20px;
+}
+
+.login-box .form-control {
+  border-radius: 20px;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.login-box .form-control:focus {
+  border-color: #a7a7a7;
+  box-shadow: 0px 0px 5px rgba(167, 167, 167, 0.5);
+}
+
+.login-box .btn-primary {
+  border-radius: 20px;
+  background-color: #e74c3c; /* Warna tombol utama */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.login-box .btn-primary:hover {
+  background-color: #c0392b;
+}
+
+.login-box .social-login {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.login-box .social-login a {
+  width: 40px;
+  height: 40px;
+  background-color: #ddd;
+  color: #555;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login-box .social-login a:hover {
+  background-color: #bbb;
+  color: #333;
+}
+
+.login-box .forgot-password {
+  margin-top: 15px;
+}
+
+.login-box .forgot-password a {
+  color: #e74c3c;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.login-box .forgot-password a:hover {
+  color: #c0392b;
+}
+
+
+/* FOOTER */
+.footer {
+  background-color: #f7f6f2;
+  color: #555;
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+  border-top: 1px solid #ddd;
+}
+
+/* Footer Content Layout */
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  margin: 20px 0;
+}
+
+.footer-section h5 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.footer-section h5:after {
+  font-family: 'Josefin Sans', sans-serif;
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 2px;
+  background: #a7a7a7;
+  bottom: -5px;
+  left: 0;
+}
+
+.footer-section p {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* Quick Links */
+.footer-section ul {
+  font-family: 'Josefin Sans', sans-serif;
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 8px 0;
+}
+
+.footer-section ul li a {
+  color: #555;
+  text-decoration: none;
+  font-size: 14px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #333;
+}
+
+/* Social Media Icons */
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-link {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: #eaeaea;
+  color: #555;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: #d6d6d6;
+  color: #333;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+}
+
+.footer-bottom p {
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 0;
+}
+
+.footer-bottom p span {
+  color: #e74c3c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+}

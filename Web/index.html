@@ -7,6 +7,7 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
   <link rel="stylesheet" href="style.css">
   <script src="app.js"></script>
@@ -38,6 +39,9 @@
         <li class="nav-item">
           <a class="nav-link" href="#" ng-click="navigate('subscribe')">Subscribe</a>
         </li>
+        <!-- Login -->
+      <li class="nav-item">
+        <a class="nav-link btn btn-primary text-white" href="#" ng-click="navigate('login')">Login</a>
       </ul>
     </div>
   </nav>
@@ -95,8 +99,6 @@
     </div>
   </div>
 </div>
-
-
 
 
   <!-- Page ABOUT-->
@@ -160,15 +162,85 @@
     <p>Explore therapeutic practices for mental wellness, like yoga, meditation, and mindfulness.</p>
   </div>
 
-  <!-- Page SUBSCRIBE-->  
-  <div ng-show="currentPage === 'subscribe'" class="container">
-    <h2>Subscribe</h2>
-    <form ng-submit="subscribe()" class="form-inline">
-      <input type="email" ng-model="subscriber.email" class="form-control mb-2 mr-sm-2" placeholder="Enter your email" required />
-      <button type="submit" class="btn btn-success mb-2">Subscribe</button>
+  <!-- Page SUBSCRIBE -->
+<div id="subscribeModal" class="modal" ng-show="showSubscribePopup">
+  <div class="modal-content">
+    <!-- Close Button -->
+    <span class="close" ng-click="closePopup()">&times;</span>
+    
+    <!-- Modal Title and Description -->
+    <h2>Subscribe to Thrive Soul</h2>
+    <p>Get the latest tips for beauty, food, and wellness delivered to your inbox.</p>
+    
+    <!-- Subscribe Form -->
+    <form ng-submit="subscribe()">
+      <input type="email" ng-model="subscriber.email" placeholder="Enter your email" required />
+      <button type="submit" class="btn btn-primary">Subscribe</button>
     </form>
   </div>
+</div> 
 
+  <!-- PAGE LOGIN -->
+  <div ng-show="currentPage === 'login'" class="login-container">
+    <div class="login-box">
+        <h2>Login</h2>
+        <form>
+            <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div class="forgot-password">
+            <a href="#">Forgot your password?</a>
+        </div>
+    </div>
+</div>
+
+  
+    <footer class="footer" ng-hide="currentPage === 'login' || currentPage === 'subscribe'">
+    <div class="container">
+      <div class="footer-content">
+        <!-- About Section -->
+        <div class="footer-section">
+          <h5>About Us</h5>
+          <p>
+            Thrive Soul is your destination for a healthier, more beautiful lifestyle. Discover our tips and guides for beauty, food, and wellness therapy.
+          </p>
+        </div>
+        <!-- Quick Links -->
+        <div class="footer-section">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#" ng-click="navigate('home')">Home</a></li>
+            <li><a href="#" ng-click="navigate('about')">About</a></li>
+            <li><a href="#" ng-click="navigate('beauty')">Beauty</a></li>
+            <li><a href="#" ng-click="navigate('food')">Food</a></li>
+            <li><a href="#" ng-click="navigate('therapy')">Therapy</a></li>
+            <li><a href="#" ng-click="openSubscribePopup()">Subscribe</a></li>
+
+          </ul>
+        </div>
+        <!-- Social Media -->
+        <div class="footer-section">
+          <h5>Follow Us</h5>
+          <div class="social-icons">
+            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Thrive Soul. Designed with ❤ for you.</p>
+      </div>
+    </div>
+  </footer>
+
+  
   <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>

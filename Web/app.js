@@ -7,6 +7,8 @@ app.controller('MainController', function($scope) {
     $scope.currentPage = page;
   };
 
+  
+
   $scope.trendingRecipes = [
     {
       imgSrc: 'images/recipe1.jpg',
@@ -131,9 +133,20 @@ app.controller('MainController', function($scope) {
   };
 
   // Subscribe functionality
-  $scope.subscriber = {};
-  $scope.subscribe = function() {
-    alert("Subscribed with email: " + $scope.subscriber.email);
-    $scope.subscriber = {}; // Clear form after submission
+  $scope.showSubscribePopup = false;
+
+    $scope.openSubscribePopup = function() {
+        $scope.showSubscribePopup = true;
+    };
+
+    $scope.closePopup = function() {
+        $scope.showSubscribePopup = false;
+    };
+
+
+  $scope.navigate = function (page) {
+    $scope.currentPage = page;
   };
+  
 });
+
