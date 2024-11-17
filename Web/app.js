@@ -7,8 +7,6 @@ app.controller('MainController', function($scope) {
     $scope.currentPage = page;
   };
 
-  
-
   $scope.trendingRecipes = [
     {
       imgSrc: 'images/recipe1.jpg',

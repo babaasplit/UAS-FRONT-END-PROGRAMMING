@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thrive Soul</title>
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
@@ -15,91 +14,82 @@
 <body ng-app="thriveSoulApp" ng-controller="MainController">
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#" ng-click="navigate('home')">Thrive Soul</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#" ng-click="navigate('home')">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" ng-click="navigate('about')">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" ng-click="navigate('beauty')">Beauty</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" ng-click="navigate('food')">Food</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" ng-click="navigate('therapy')">Therapy</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" ng-click="navigate('subscribe')">Subscribe</a>
-        </li>
-        <!-- Login -->
-      <li class="nav-item">
-        <a class="nav-link btn btn-primary text-white" href="#" ng-click="navigate('login')">Login</a>
-      </ul>
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#" ng-click="navigate('home')">Thrive Soul</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="#" ng-click="navigate('home')">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" ng-click="navigate('about')">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" ng-click="navigate('beauty')">Beauty</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" ng-click="navigate('food')">Food</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" ng-click="navigate('therapy')">Therapy</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" ng-click="navigate('subscribe')">Subscribe</a></li>
+        </ul>
+        <form class="d-flex align-items-center">
+          <input class="form-control rounded-pill px-3" type="search" placeholder="Search..." aria-label="Search">
+          <button class="btn btn-outline-light rounded-pill ms-2 px-4" type="submit">Search</button>
+        </form>
+        <a class="btn btn-success rounded-pill ms-3 px-4 text-white" href="#" ng-click="navigate('login')">Login</a>
+      </div>
     </div>
   </nav>
 
-  <!-- Page HOME -->
-<div ng-show="currentPage === 'home'" class="container">
-  <h2>Welcome to Thrive Soul</h2>
-  <p>Explore a healthier, balanced lifestyle through beauty, food, therapy, and more.</p>
+  <!-- Page Content -->
+  <div ng-show="currentPage === 'home'" class="container">
+    <h2>Welcome to Thrive Soul</h2>
+    <p>Explore a healthier, balanced lifestyle through beauty, food, therapy, and more.</p>
 
-  <!-- Trending Recipes -->
-  <div class="trending-recipes mt-5">
-    <h2>Trending Recipes</h2>
-    <p>Check out the recipes our readers love most!</p>
-    <div class="row">
-      <div class="col-md-3" ng-repeat="recipe in trendingRecipes">
-        <img ng-src="{{recipe.imgSrc}}" class="img-fluid" alt="Recipe Image">
-        <p>{{recipe.description}}</p>
+    <!-- Sections -->
+    <div class="trending-recipes mt-5">
+      <h2>Trending Recipes</h2>
+      <p>Check out the recipes our readers love most!</p>
+      <div class="row">
+        <div class="col-md-3" ng-repeat="recipe in trendingRecipes">
+          <img ng-src="{{recipe.imgSrc}}" class="img-fluid" alt="Recipe Image">
+          <p>{{recipe.description}}</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Beauty Recipes -->
+    <div class="beauty-recipes mt-5">
+      <h2>Beauty Recipes</h2>
+      <p>Revolutionize your beauty routine by opting for DIY skincare formulas, bath soaks, and body recipes.</p>
+      <div class="row">
+        <div class="col-md-3" ng-repeat="recipe in beautyRecipes">
+          <img ng-src="{{recipe.imgSrc}}" class="img-fluid" alt="Beauty Recipe Image">
+          <p>{{recipe.description}}</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Haircare Recipes -->
+    <div class="haircare-recipes mt-5">
+      <h2>Haircare Recipes</h2>
+      <p>Discover the best DIY haircare formulas to nourish, repair, and style your hair naturally.</p>
+      <div class="row">
+        <div class="col-md-3" ng-repeat="recipe in haircareRecipes">
+          <img ng-src="{{recipe.imgSrc}}" class="img-fluid" alt="Haircare Recipe Image">
+          <p>{{recipe.description}}</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Good for You Recipes -->
+    <div class="good-for-you-recipes mt-5">
+      <h2>Good for You Recipes</h2>
+      <p>Explore healthy and delicious recipes that are good for your body and soul.</p>
+      <div class="row">
+        <div class="col-md-3" ng-repeat="recipe in goodForYouRecipes">
+          <img ng-src="{{recipe.imgSrc}}" class="img-fluid" alt="Good for You Recipe Image">
+          <p>{{recipe.description}}</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-<!-- Beauty Recipes Section (Hanya Tampil di Home) -->
-<div ng-show="currentPage === 'home'" class="beauty-recipes mt-5">
-  <h2>Beauty Recipes</h2>
-  <p>Revolutionize your beauty routine by opting for DIY skincare formulas, bath soaks, and body recipes.</p>
-  <div class="row">
-    <div class="col-md-3" ng-repeat="recipe in beautyRecipes">
-      <img ng-src="{{recipe.imgSrc}}" class="img-fluid" alt="Beauty Recipe Image">
-      <p>{{recipe.description}}</p>
-    </div>
-  </div>
-</div>
-
-<!-- Haircare Recipes Section (Hanya Tampil di Home) -->
-<div ng-show="currentPage === 'home'" class="haircare-recipes mt-5">
-  <h2>Haircare Recipes</h2>
-  <p>Discover the best DIY haircare formulas to nourish, repair, and style your hair naturally.</p>
-  <div class="row">
-    <div class="col-md-3" ng-repeat="recipe in haircareRecipes">
-      <img ng-src="{{recipe.imgSrc}}" class="img-fluid" alt="Haircare Recipe Image">
-      <p>{{recipe.description}}</p>
-    </div>
-  </div>
-</div>
-
-<!-- Good for You Recipes Section (Hanya Tampil di Home) -->
-<div ng-show="currentPage === 'home'" class="good-for-you-recipes mt-5">
-  <h2>Good for You Recipes</h2>
-  <p>Explore healthy and delicious recipes that are good for your body and soul.</p>
-  <div class="row">
-    <div class="col-md-3" ng-repeat="recipe in goodForYouRecipes">
-      <img ng-src="{{recipe.imgSrc}}" class="img-fluid" alt="Good for You Recipe Image">
-      <p>{{recipe.description}}</p>
-    </div>
-  </div>
-</div>
-
 
   <!-- Page ABOUT-->
   <div ng-show="currentPage === 'about'" class="container">
@@ -180,65 +170,68 @@
   </div>
 </div> 
 
-  <!-- PAGE LOGIN -->
-  <div ng-show="currentPage === 'login'" class="login-container">
-    <div class="login-box">
-        <h2>Login</h2>
-        <form>
-            <div class="form-group">
-                <input type="email" class="form-control" id="email" placeholder="Enter email">
-            </div>
-            <div class="form-group">
-                <input type="password" class="form-control" id="password" placeholder="Password">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-        <div class="forgot-password">
-            <a href="#">Forgot your password?</a>
-        </div>
+<!-- PAGE LOGIN -->
+<div ng-show="currentPage === 'login'" class="login-container">
+  <div class="login-box">
+    <h2>Welcome Back</h2>
+    <p class="sub-title">Login to access your account</p>
+    <form>
+      <div class="form-group">
+        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" id="password" placeholder="Enter your password">
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+    <div class="forgot-password">
+      <a href="#">Forgot your password?</a>
     </div>
+    <div class="create-account">
+      <p>Don't have an account? <a href="#">Sign up here</a></p>
+    </div>
+  </div>
 </div>
 
-  
-    <footer class="footer" ng-hide="currentPage === 'login' || currentPage === 'subscribe'">
-    <div class="container">
-      <div class="footer-content">
-        <!-- About Section -->
-        <div class="footer-section">
-          <h5>About Us</h5>
-          <p>
-            Thrive Soul is your destination for a healthier, more beautiful lifestyle. Discover our tips and guides for beauty, food, and wellness therapy.
-          </p>
-        </div>
-        <!-- Quick Links -->
-        <div class="footer-section">
-          <h5>Quick Links</h5>
-          <ul>
-            <li><a href="#" ng-click="navigate('home')">Home</a></li>
-            <li><a href="#" ng-click="navigate('about')">About</a></li>
-            <li><a href="#" ng-click="navigate('beauty')">Beauty</a></li>
-            <li><a href="#" ng-click="navigate('food')">Food</a></li>
-            <li><a href="#" ng-click="navigate('therapy')">Therapy</a></li>
-            <li><a href="#" ng-click="openSubscribePopup()">Subscribe</a></li>
-
-          </ul>
-        </div>
-        <!-- Social Media -->
-        <div class="footer-section">
-          <h5>Follow Us</h5>
-          <div class="social-icons">
-            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
-          </div>
-        </div>
+<footer class="footer" ng-hide="currentPage === 'login' || currentPage === 'subscribe'">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h5>About Us</h5>
+        <p>Thrive Soul is your destination for a healthier, more beautiful lifestyle. Discover our tips and guides for beauty, food, and wellness therapy.</p>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 Thrive Soul. Designed with ❤ for you.</p>
+      <div class="footer-section">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#" ng-click="navigate('home')">Home</a></li>
+          <li><a href="#" ng-click="navigate('about')">About</a></li>
+          <li><a href="#" ng-click="navigate('beauty')">Beauty</a></li>
+          <li><a href="#" ng-click="navigate('food')">Food</a></li>
+          <li><a href="#" ng-click="navigate('therapy')">Therapy</a></li>
+          <li><a href="#" ng-click="openSubscribePopup()">Subscribe</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h5>Follow Us</h5>
+        <div class="social-icons">
+          <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+        </div>
       </div>
     </div>
-  </footer>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Thrive Soul. Designed with ❤ for you.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
 
   
   <!-- Bootstrap JS -->

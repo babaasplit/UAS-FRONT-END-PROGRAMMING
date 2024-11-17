@@ -1,246 +1,139 @@
+/* General Styles */
 body {
-    font-family: 'Josefin Sans', sans-serif;
-  }
-  
-  h1 {
-    font-family: 'Josefin Sans', sans-serif;
-    cursor: pointer;
-  }
-  
-  .navbar {
-    margin-bottom: 20px;
-    font-family: 'Josefin Sans', sans-serif;
-  }
-  
-  
-  /* PAGE HOME */
-  .trending-recipes {
-    text-align: center;
-    margin-top: 50px;
-  }
-  
-  .trending-recipes h2 {
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 700;
-    font-size: 1.8rem;
-  }
-  
-  .trending-recipes p {
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 400;
-    color: #666;
-  }
-  
-  .trending-recipes .row .col-md-3 {
-    margin-top: 20px;
-  }
-  
-  .trending-recipes .img-fluid {
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
-  
-  .trending-recipes .col-md-3 p {
-    font-size: 0.9rem;
-    color: #333;
-  }
+  font-family: 'Josefin Sans', sans-serif;
+}
 
-  .beauty-recipes {
-    text-align: center;
-    padding: 30px 20px;
-  }
-  
-  .beauty-recipes h2 {
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: bold;
-    margin-bottom: 20px;
-    font-size: 2rem;
-  }
-  
-  .beauty-recipes p {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 25px;
-  }
-  
-  .beauty-recipes .row {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .beauty-recipes .col-md-3 {
-    flex: 1 1 calc(20% - 20px); /* Mengatur kolom agar 5 dalam satu baris */
-    max-width: calc(20% - 20px); /* Membatasi lebar maksimal */
-    margin-bottom: 20px;
-  }
-  
-  .beauty-recipes img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .beauty-recipes img:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  .beauty-recipes .col-md-3 p {
-    text-align: center;
-    margin: 10px 0 0;
-    font-size: 0.9rem; /* Mengecilkan ukuran teks sedikit */
-  }
+h1, h2, p {
+  font-family: 'Josefin Sans', sans-serif;
+  margin-top: 25px;
+}
 
-  .haircare-recipes {
-    text-align: center;
-    padding: 30px 20px;
-  }
-  
-  .haircare-recipes h2 {
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: bold;
-    margin-bottom: 20px;
-    font-size: 2rem;
-  }
-  
-  .haircare-recipes p {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 25px;
-  }
-  
-  .haircare-recipes .row {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .haircare-recipes .col-md-3 {
-    flex: 1 1 calc(20% - 20px); /* Adjusts columns to fit 5 in one row */
-    max-width: calc(20% - 20px); /* Limits maximum width */
-    margin-bottom: 20px;
-  }
-  
-  .haircare-recipes img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .haircare-recipes img:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  .haircare-recipes .col-md-3 p {
-    text-align: center;
-    margin: 10px 0 0;
-    font-size: 0.9rem; /* Slightly reduced font size */
-  }  
+h1 {
+  cursor: pointer;
+}
 
-  .good-for-you-recipes {
-    text-align: center;
-    padding: 30px 20px;
-  }
-  
-  .good-for-you-recipes h2 {
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: bold;
-    margin-bottom: 20px;
-    font-size: 2rem;
-  }
-  
-  .good-for-you-recipes p {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 25px;
-  }
-  
-  .good-for-you-recipes .row {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .good-for-you-recipes .col-md-3 {
-    flex: 1 1 calc(20% - 20px); /* Adjusts columns to fit 5 in one row */
-    max-width: calc(20% - 20px); /* Limits maximum width */
-    margin-bottom: 20px;
-  }
-  
-  .good-for-you-recipes img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .good-for-you-recipes img:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  .good-for-you-recipes .col-md-3 p {
-    text-align: center;
-    margin: 10px 0 0;
-    font-size: 0.9rem; /* Slightly reduced font size */
-  }
-  
-  
-  /* Bagian About */
-  .grey-box {
-    background-color:#E5E4E2;
-    width: 250px;
-  }
-  .image-container {
-    width: 200px;
-    height: 200px;
-    overflow: hidden;
-    position: relative;
-  }
+/* Navbar */
+.navbar-brand {
+  font-size: 1.5rem;
+  color: #fff;
+}
 
-  .profile-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.nav-link {
+  font-size: 1rem;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
 
-  .profile-box .img-fluid2 {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 100%;
-  }
+.nav-link:hover {
+  color: #fff;
+}
 
-/* SUBSCRIBE Modal container */
-/* Modal background */
+form .form-control {
+  border: 2px solid #fff;
+  transition: border-color 0.3s ease;
+}
+
+form .form-control:focus {
+  border-color: #80bdff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(128, 189, 255, 0.5);
+}
+
+.btn-success {
+  background-color: #28a745;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+/* Home Page */
+.trending-recipes, .beauty-recipes, .haircare-recipes, .good-for-you-recipes {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.trending-recipes h2, .beauty-recipes h2, .haircare-recipes h2, .good-for-you-recipes h2 {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.trending-recipes p, .beauty-recipes p, .haircare-recipes p, .good-for-you-recipes p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.col-md-3 {
+  flex: 1 1 calc(20% - 20px);
+  max-width: calc(20% - 20px);
+  margin-bottom: 20px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.col-md-3 p {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+/* About Section */
+.profile-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img-fluid2 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 100%;
+}
+
+.grey-box {
+  background-color: #E5E4E2;
+  width: 250px;
+}
+
+/* Modal Styles */
 .modal {
-  display: none; /* Sembunyikan modal secara default */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Latar belakang transparan gelap */
+  background-color: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
-  z-index: 999; /* Pastikan modal muncul di atas elemen lainnya */
+  z-index: 999;
 }
 
-/* Konten modal */
 .modal-content {
   background-color: white;
   padding: 20px;
@@ -250,7 +143,6 @@ body {
   position: relative;
 }
 
-/* Tombol tutup */
 .modal .close {
   position: absolute;
   top: 10px;
@@ -259,15 +151,11 @@ body {
   cursor: pointer;
 }
 
-/* Tombol subscribe */
 .btn-primary {
   background-color: #4CAF50;
   color: white;
   border: none;
   padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
   font-size: 16px;
   cursor: pointer;
 }
@@ -276,118 +164,72 @@ body {
   background-color: #45a049;
 }
 
-
-
-  /* LOGIN PAGE */
+/* Login Page */
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f7f7f7; /* Warna latar belakang sesuai tema */
+  background: url('images/background1.jpg') center/cover no-repeat;
+  position: relative;
+}
+
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .login-box {
-  background: white;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  width: 100%;
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 50px 40px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
   text-align: center;
+  max-width: 450px;
+  width: 100%;
 }
 
 .login-box h2 {
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: bold;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   color: #333;
-  margin-bottom: 20px;
-}
-
-.login-box form {
-  margin-bottom: 20px;
 }
 
 .login-box .form-control {
-  border-radius: 20px;
-  padding: 10px 15px;
-  margin-bottom: 15px;
+  border-radius: 25px;
+  padding: 15px 20px;
   border: 1px solid #ddd;
-  font-size: 14px;
-}
-
-.login-box .form-control:focus {
-  border-color: #a7a7a7;
-  box-shadow: 0px 0px 5px rgba(167, 167, 167, 0.5);
+  background: #f7f7f7;
 }
 
 .login-box .btn-primary {
-  border-radius: 20px;
-  background-color: #e74c3c; /* Warna tombol utama */
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  width: 100%;
-  transition: background-color 0.3s ease;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #ff7675, #ff6b6b);
+  padding: 15px 30px;
+  font-size: 18px;
 }
 
 .login-box .btn-primary:hover {
-  background-color: #c0392b;
+  background: linear-gradient(135deg, #ff6b6b, #d63031);
+  transform: translateY(-3px);
+  box-shadow: 0px 5px 15px rgba(255, 107, 107, 0.4);
 }
 
-.login-box .social-login {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.login-box .social-login a {
-  width: 40px;
-  height: 40px;
-  background-color: #ddd;
-  color: #555;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.login-box .social-login a:hover {
-  background-color: #bbb;
-  color: #333;
-}
-
-.login-box .forgot-password {
-  margin-top: 15px;
-}
-
-.login-box .forgot-password a {
-  color: #e74c3c;
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.3s ease;
-}
-
-.login-box .forgot-password a:hover {
-  color: #c0392b;
-}
-
-
-/* FOOTER */
+/* Footer */
 .footer {
   background-color: #f7f6f2;
   color: #555;
   padding: 40px 20px;
-  font-family: 'Poppins', sans-serif;
   border-top: 1px solid #ddd;
 }
 
-/* Footer Content Layout */
 .footer-content {
   display: flex;
   flex-wrap: wrap;
@@ -402,7 +244,6 @@ body {
 }
 
 .footer-section h5 {
-  font-family: 'Josefin Sans', sans-serif;
   font-size: 18px;
   color: #333;
   margin-bottom: 15px;
@@ -410,7 +251,6 @@ body {
 }
 
 .footer-section h5:after {
-  font-family: 'Josefin Sans', sans-serif;
   content: '';
   position: absolute;
   width: 40px;
@@ -420,71 +260,26 @@ body {
   left: 0;
 }
 
-.footer-section p {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #666;
-}
-
-/* Quick Links */
 .footer-section ul {
-  font-family: 'Josefin Sans', sans-serif;
   list-style: none;
   padding: 0;
-}
-
-.footer-section ul li {
-  margin: 8px 0;
 }
 
 .footer-section ul li a {
   color: #555;
   text-decoration: none;
   font-size: 14px;
-  position: relative;
-  transition: color 0.3s ease;
 }
 
 .footer-section ul li a:hover {
   color: #333;
 }
 
-/* Social Media Icons */
-.social-icons {
-  display: flex;
-  gap: 10px;
-}
-
-.social-link {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  background-color: #eaeaea;
-  color: #555;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 40px;
-  font-size: 16px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.social-link:hover {
-  background-color: #d6d6d6;
-  color: #333;
-}
-
-/* Footer Bottom */
 .footer-bottom {
-  margin-top: 30px;
   text-align: center;
+  margin-top: 30px;
   font-size: 14px;
   color: #777;
-}
-
-.footer-bottom p {
-  font-family: 'Josefin Sans', sans-serif;
-  margin: 0;
 }
 
 .footer-bottom p span {
