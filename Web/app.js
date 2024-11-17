@@ -148,3 +148,27 @@ app.controller('MainController', function($scope) {
   
 });
 
+$scope.beautyCategories = {
+  skinCare: [
+    { imgSrc: 'images/skinker1.jpg', description: 'Soothing Face Mask' },
+    { imgSrc: 'images/skinker2.jpg', description: 'Glowing Skin Serum' },
+    { imgSrc: 'images/skinker3.jpg', description: 'Hydrating Mist' }
+  ]
+};
+
+
+$scope.beautyCategories = {
+  skinCare: [
+    { imgSrc: 'assets/images/skin1.jpg', description: 'Soothing Face Mask' },
+    { imgSrc: 'assets/images/skin2.jpg', description: 'Glowing Skin Serum' },
+    { imgSrc: 'assets/images/skin3.jpg', description: 'Hydrating Mist' },
+    { imgSrc: 'assets/images/skin4.jpg', description: 'Gentle Exfoliant' }
+  ],
+  hairCare: [
+    { imgSrc: 'assets/images/hair1.jpg', description: 'DIY Hair Oil' },
+    { imgSrc: 'assets/images/hair2.jpg', description: 'Natural Shampoo' },
+    { imgSrc: 'assets/images/hair3.jpg', description: 'Conditioning Mask' },
+    { imgSrc: 'assets/images/hair4.jpg', description: 'Scalp Scrub' }
+  ]
+};
+
