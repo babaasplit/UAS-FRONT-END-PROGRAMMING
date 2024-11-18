@@ -42,7 +42,16 @@ form .form-control:focus {
   background-color: #E5E4E2;
   width: 250px;
 }
+.col-md-8  p{
+  font-weight: 400;
+}
 
+.container p{
+  font-size: 20px;
+}
+.h2{
+  font-size: 25px;
+}
 /* Modal Styles */
 .modal {
   display: none;
