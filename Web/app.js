@@ -8,38 +8,10 @@ app.controller('MainController', function($scope) {
   };
 
   $scope.trendingRecipes = [
-    {
-      imgSrc: 'images/recipe1.jpg',
-      description: 'Craft Your Own Signature Scents with Essential Oil Blends'
-    },
-    {
-      imgSrc: 'images/recipe2.jpg',
-      description: 'Natural Acne Solutions: 12 DIY Masks for Clearer Skin'
-    },
-    {
-      imgSrc: 'images/recipe3.jpg',
-      description: 'Exfoliate Naturally: Homemade Face Scrubs Using Pantry Staples'
-    },
-    {
-      imgSrc: 'images/recipe4.jpg',
-      description: 'Fresh Juicing Guide: 3 Simple Recipes for a Healthy Boost'
-    },
-    {
-      imgSrc: 'images/recipe5.jpg',
-      description: 'Homemade Herbal Teas: Soothing Blends for Relaxation'
-    },
-    {
-      imgSrc: 'images/recipe6.jpg',
-      description: 'DIY Lip Balm: Nourish Your Lips Naturally'
-    },
-    {
-      imgSrc: 'images/recipe7.jpg',
-      description: 'Healthy Smoothie Bowls: Toppings and Ideas for a Vibrant Breakfast'
-    },
-    {
-      imgSrc: 'images/recipe8.jpg',
-      description: 'Plant-Based Meal Prep: Quick and Easy Vegan Recipes'
-    },
+    { imgSrc: 'images/recipe1.jpg', description: 'Craft Your Own Signature Scents with Essential Oil Blends'},
+    { imgSrc: 'images/recipe2.jpg', description: 'Natural Acne Solutions: 12 DIY Masks for Clearer Skin'},
+    { imgSrc: 'images/recipe3.jpg', description: 'Exfoliate Naturally: Homemade Face Scrubs Using Pantry Staples'},
+    { imgSrc: 'images/recipe4.jpg', description: 'Fresh Juicing Guide: 3 Simple Recipes for a Healthy Boost'},
   ];
 
    // Beauty Recipes Data
