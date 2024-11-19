@@ -38,13 +38,19 @@ form .form-control:focus {
   border-radius: 100%;
 }
 
-.grey-box {
-  background-color: #E5E4E2;
-  width: 250px;
+ .grey-box {
+  background-color: #E5E4E2; 
+  width: 100%; 
+  max-width: 300px; 
+  padding: 30px; 
+  margin: 0 auto; 
+  border-radius: 8px; 
+  max-height: 550px;
 }
+
 .col-md-8  p{
   font-weight: 400;
-}
+} 
 
 .container p{
   font-size: 20px;
@@ -52,6 +58,46 @@ form .form-control:focus {
 .h2{
   font-size: 25px;
 }
+
+.bath-bombs-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.bath-bombs-container h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.bath-bombs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  gap: 20px; 
+}
+
+.bath-bomb-item {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  text-align: center;
+}
+
+.bath-bomb-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.bath-bomb-item p {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0;
+}
+
+
 /* Modal Styles */
 .modal {
   display: none;

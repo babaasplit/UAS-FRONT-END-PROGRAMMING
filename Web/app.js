@@ -38,10 +38,19 @@ app.controller('MainController', function($scope) {
 
     // Image About
     $scope.About1 = {
-      imgSrc: 'images/about1.jpg'  
+    imgSrc: 'images/about1.jpg'  
   };
   $scope.About2 = {
     imgSrc: 'images/about2.jpg'  
+  };
+  $scope.About3 = {
+    imgSrc: 'images/about3.jpg'  
+  };
+  $scope.About5 = {
+    imgSrc: 'images/about5.png'  
+  };
+  $scope.About6 = {
+    imgSrc: 'images/about6.png'  
   };
 
   // CRUD logic for Beauty Tips
