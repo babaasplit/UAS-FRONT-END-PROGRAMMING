@@ -152,4 +152,3 @@ $scope.beautyCategories = {
     { imgSrc: 'assets/images/hair4.jpg', description: 'Scalp Scrub' }
   ]
 };
-
