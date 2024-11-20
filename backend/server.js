@@ -1,34 +1,18 @@
-// Importing required modules
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors');
+const authRoutes = require('./routes/authRoutes');
 require('dotenv').config();
 
-// Importing custom modules
-const sequelize = require('./config/db');
-const authRoutes = require('./routes/authRoutes');
-
-// Initializing Express app
 const app = express();
 
-// Middleware setup
-app.use(cors());
+// Middleware
 app.use(bodyParser.json());
 
-// Defining routes
-app.use('/api/auth', authRoutes);
+// Routes
+app.use('/auth', authRoutes);
 
-// Syncing the database
-sequelize.sync({ force: false })
-  .then(() => {
-    console.log('Database synchronized');
-  })
-  .catch((err) => {
-    console.error('Database sync failed:', err);
-  });
-
-// Setting up server
-const PORT = process.env.PORT || 5000;
+// Start Server
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+    console.log(`Server running on http://localhost:${PORT}`);
 });
