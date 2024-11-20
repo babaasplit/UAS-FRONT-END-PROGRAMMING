@@ -44,7 +44,7 @@ app.controller('MainController', function($scope) {
     imgSrc: 'images/about2.jpg'  
   };
   $scope.About3 = {
-    imgSrc: 'images/about3.jpg'  
+    imgSrc: 'images/about3.webp'  
   };
   $scope.About5 = {
     imgSrc: 'images/about5.png'  
