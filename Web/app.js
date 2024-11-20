@@ -35,6 +35,25 @@ app.controller('MainController', function($scope) {
     { imgSrc: 'images/good3.jpg', description: 'Quinoa Salad - Packed with protein and fresh veggies.'},
     { imgSrc: 'images/good4.jpg', description: 'Dark Chocolate Energy Bites - A guilt-free sweet treat.'}
   ];
+  
+  //FOOD PAGE
+  $scope.currentPage = 'food';
+
+  $scope.drinks = [
+    { name: 'Smoothies', image: 'images/smoothies.jpg' },
+    { name: 'Coffee + Tea', image: 'images/coffee.jpg' },
+    { name: 'Juice + Water', image: 'images/juice.jpg' },
+    { name: 'Drinks + Cocktails', image: 'images/cocktails.jpg' }
+  ];
+  
+  $scope.meals = [
+    { name: 'Breakfast', image: 'images/breakfast.jpg' },
+    { name: 'Lunch', image: 'images/lunch.jpg' },
+    { name: 'Dinner', image: 'images/dinner.jpg' },
+    { name: 'Dessert', image: 'images/dessert.jpg' }
+  ];
+  
+  
 
     // Image About
     $scope.About1 = {
@@ -82,34 +101,6 @@ app.controller('MainController', function($scope) {
     $scope.isEditingBeauty = false;
   };
 
-  // CRUD logic for Food Recipes
-  $scope.foodItems = [];
-  $scope.isEditingFood = false;
-  $scope.addOrUpdateFood = function() {
-    if ($scope.isEditingFood) {
-      // Update existing food recipe
-      var index = $scope.foodItems.indexOf($scope.editingFood);
-      $scope.foodItems[index] = angular.copy($scope.foodItem);
-      $scope.isEditingFood = false;
-    } else {
-      // Add new food recipe
-      $scope.foodItems.push(angular.copy($scope.foodItem));
-    }
-    $scope.clearFoodForm();
-  };
-  $scope.deleteFood = function(item) {
-    var index = $scope.foodItems.indexOf(item);
-    $scope.foodItems.splice(index, 1);
-  };
-  $scope.editFood = function(item) {
-    $scope.isEditingFood = true;
-    $scope.editingFood = item;
-    $scope.foodItem = angular.copy(item);
-  };
-  $scope.clearFoodForm = function() {
-    $scope.foodItem = {};
-    $scope.isEditingFood = false;
-  };
 
   // Subscribe functionality
   $scope.showSubscribePopup = false;
@@ -152,3 +143,4 @@ $scope.beautyCategories = {
     { imgSrc: 'assets/images/hair4.jpg', description: 'Scalp Scrub' }
   ]
 };
+

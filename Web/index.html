@@ -256,40 +256,49 @@
     </div>
   </div>
 
-  <!-- Page FOOD -->
+  <!-- Food Page Section -->
   <div ng-show="currentPage === 'food'" class="container py-5">
     <h2 class="text-center mb-5">Food Recipes</h2>
 
-    <!-- Add/Edit Food Form -->
-    <div class="row mb-4">
-      <div class="col-lg-6 mx-auto">
-        <form ng-submit="addOrUpdateFood()" class="form-inline d-flex">
-          <input type="text" ng-model="foodItem.name" class="form-control mb-2 mr-sm-2 flex-grow-1"
-            placeholder="Add a new food recipe" required />
-          <button type="submit" class="btn btn-primary mb-2">
-            {{ isEditingFood ? "Update" : "Add" }} Recipe
-          </button>
-        </form>
-      </div>
-    </div>
-
-    <!-- Food Recipes Grid -->
     <div class="row">
-      <div class="col-md-4 mb-4" ng-repeat="item in foodItems">
-        <div class="card">
-          <img ng-src="{{item.imgSrc}}" class="card-img-top" alt="Recipe Image" />
-          <div class="card-body">
-            <h5 class="card-title">{{ item.name }}</h5>
-            <button ng-click="viewRecipe(item)" class="btn btn-info btn-block mb-2">View Recipe</button>
-            <button ng-click="editFood(item)" class="btn btn-warning btn-sm float-left mr-2">Edit</button>
-            <button ng-click="deleteFood(item)" class="btn btn-danger btn-sm float-right">Delete</button>
+      <!-- Main Content -->
+      <div class="col-md-8">
+        <h3>Recipe Index</h3>
+        <p>Healthy eating has never been easier! With so many resources available, we now have the knowledge to create the perfect plate: quick and easy, nutritious and tasty, good for you and for the world around you.</p>
+        <div class="input-group mb-4">
+          <input type="text" class="form-control" placeholder="Search for a recipe + hit enter" ng-model="searchQuery">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button">SEARCH</button>
+          </div>
+        </div>
+
+        <h4>Drinks</h4>
+        <div class="row category mb-4">
+          <div class="col-3 text-center" ng-repeat="drink in drinks">
+            <img ng-src="{{drink.image}}" alt="{{drink.name}}">
+            <p>{{drink.name}}</p>
+          </div>
+        </div>
+
+        <h4>Meals</h4>
+        <div class="row category">
+          <div class="col-3 text-center" ng-repeat="meal in meals">
+            <img ng-src="{{meal.image}}" alt="{{meal.name}}">
+            <p>{{meal.name}}</p>
           </div>
         </div>
       </div>
+
+      <!-- Sidebar -->
+      <div class="col-md-4 sidebar">
+        <img src="images/gracie.jpg" alt="Gracie" class="profile-pic mb-3">
+        <h4>Hi, I'm Gracie</h4>
+        <p>Welcome to ThriveSoul, where you’ll learn all about making clean beauty products with herbal ingredients and essential oils. Read on for our best tips, techniques, and recipes for natural beauty.</p>
+        <a href="#">More about me →</a>
+      </div>
     </div>
   </div>
-
-
+  
   <!-- Page THERAPY-->
   <div ng-show="currentPage === 'therapy'" class="container">
     <h2>Therapy</h2>
