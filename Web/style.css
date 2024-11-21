@@ -11,6 +11,18 @@ h1 {
   cursor: pointer;
 }
 
+/* Hover effect for nav links */
+.nav-link:hover {
+  color: #007BFF !important;
+  text-decoration: underline;
+}
+
+/* Navbar brand spacing */
+.navbar-brand {
+  margin-right: auto; /* Membuat jarak otomatis dengan elemen lainnya */
+}
+
+
 form .form-control {
   border: 2px solid #fff;
   transition: border-color 0.3s ease;
