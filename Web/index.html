@@ -300,9 +300,57 @@
   
   <!-- Page THERAPY-->
   <div ng-show="currentPage === 'therapy'" class="container">
-    <h2>Therapy</h2>
-    <p>Explore therapeutic practices for mental wellness, like yoga, meditation, and mindfulness.</p>
+    <h2 class="text-center mb-5">Therapy</h2> 
+    
+    <div class="row">
+      <!-- Main Content -->
+      <div class="col-md-8">
+        <h3>AromaTherapy</h3>
+        <p>Discover a variety of therapeutic practices that promote mental wellness, such as yoga to enhance physical and mental flexibility, meditation to calm the mind and relieve stress, and mindfulness to cultivate self-awareness and fully embrace each moment of life.
+          By integrating these practices into your daily routine, you can achieve a harmonious balance between body, mind, and emotions, leading to a healthier and more fulfilling mental state.
+        </P>
+        <div class="input-group mb-4">
+          <input type="text" class="form-control" placeholder="Search for a recipe + hit enter" ng-model="searchQuery">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button">SEARCH</button>
+          </div>
+        </div>
+
+        <h4>Essentials Oils</h4>
+        <div class="row category mb-3">
+          <div class="col-3 text-center" ng-repeat="Essentials in EssentialsOils">
+            <img ng-src="{{Essentials.image}}" alt="{{Essentials.name}}">
+            <p>{{Essentials.name}}</p>
+          </div>
+        </div>
+
+        <h4>diys</h4>
+        <div class="row category">
+          <div class="col-3 text-center" ng-repeat="diy in diys">
+            <img ng-src="{{diy.image}}" alt="{{diy.name}}">
+            <p>{{diy.name}}</p>
+          </div>
+        </div>
+
+        <h4>Living + wellnes</h4>
+        <div class="row category">
+          <div class="col-3 text-center" ng-repeat="Living in LivingWellnes">
+            <img ng-src="{{Living.image}}" alt="{{Living.name}}">
+            <p>{{Living.name}}</p>
+          </div>
+        </div>
+      </div>
+      <!--TAylor Profile -->
+      <div class="col-md-4 sidebar">
+        <img src="images/Therapy1.png
+        " alt="Gracie" class="profile-pic mb-3">
+        <h4>Hi, I'm Taylor</h4>
+        <p>Welcome to ThriveSoul, where you’ll explore the art of creating clean beauty products using herbal ingredients and essential oils. Discover our top therapeutic tips, techniques, and recipes for achieving natural beauty and holistic wellness.</p>
+        <a href="#">More about me →</a>
+      </div>
   </div>
+</div>
+  
 
   <!-- Page SUBSCRIBE -->
   <div id="subscribeModal" class="modal" ng-show="showSubscribePopup">

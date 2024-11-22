@@ -53,7 +53,27 @@ app.controller('MainController', function($scope) {
     { name: 'Dessert', image: 'images/dessert.jpg' }
   ];
   
+  // Therapy Image
+  $scope.currentPage = 'therapy';
+
+  $scope.EssentialsOils = [
+    { name: 'Difussing', image: 'images/Diffusing.jpg' },
+    { name: 'Ask an Aromatherapist', image: 'images/Ask an Aromatherapist.jpg' },
+    { name: 'Remedies', image: 'images/Remedies.jpg' },
+  ];
   
+  $scope.diys = [
+    { name: 'Candles', image: 'images/Candles.jpg' },
+    { name: 'Perfume', image: 'images/Perfume.jpg' },
+    { name: 'Cleaning', image: 'images/Cleaning.jpg' },
+    { name: 'Massage', image: 'images/Massage.jpg' }
+  ];
+  $scope.LivingWellnes = [
+    { name: 'Crafts', image: 'images/Crafts.jpg' },
+    { name: 'DIY Jewelry', image: 'images/DIY Jewelry.jpg' },
+    { name: 'Crystals', image: 'images/Crystals.jpg' },
+    { name: 'Wellness', image: 'images/Wellness.jpg' }
+  ];
 
     // Image About
     $scope.About1 = {
