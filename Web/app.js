@@ -92,25 +92,23 @@ app.controller('MainController', function($scope) {
     imgSrc: 'images/about6.png'  
   };
 
-  
-
-
-  // Subscribe functionality
   $scope.showSubscribePopup = false;
 
-    $scope.openSubscribePopup = function() {
-        $scope.showSubscribePopup = true;
-    };
-
-    $scope.closePopup = function() {
-        $scope.showSubscribePopup = false;
-    };
-
-
-  $scope.navigate = function (page) {
-    $scope.currentPage = page;
+  $scope.closePopup = function () {
+    $scope.showSubscribePopup = false;
   };
   
+  $scope.subscribe = function () {
+    if ($scope.subscriber && $scope.subscriber.email) {
+      alert('Thank you for subscribing!');
+      $scope.closePopup();
+    } else {
+      alert('Please enter a valid email.');
+    }
+  };
+  
+
+
   $scope.beautyCategories = {
     skinCare: [
       { imgSrc: 'images/skincare1.jpg', description: 'Gentle Face Scrub' },
