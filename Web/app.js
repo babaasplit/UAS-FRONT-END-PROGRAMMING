@@ -111,16 +111,22 @@ app.controller('MainController', function($scope) {
     $scope.currentPage = page;
   };
   
+  $scope.beautyCategories = {
+    skinCare: [
+      { imgSrc: 'images/skincare1.jpg', description: 'Gentle Face Scrub' },
+      { imgSrc: 'images/skincare2.jpg', description: 'Soothing Face Mask' },
+      { imgSrc: 'images/skincare3.jpg', description: 'Hydrating Serum' },
+      { imgSrc: 'images/skincare4.jpg', description: 'Nourishing Night Cream' },
+    ],
+    hairCare: [
+      { imgSrc: 'images/haircare1.jpg', description: 'Deep Conditioning Treatment' },
+      { imgSrc: 'images/haircare2.jpg', description: 'Herbal Hair Rinse' },
+      { imgSrc: 'images/haircare3.jpg', description: 'Volumizing Mousse' },
+      { imgSrc: 'images/haircare4.jpg', description: 'Frizz Control Serum' },
+    ],
+  };
+  
+  
 });
 
-$scope.beautyCategories = {
-  skinCare: [
-    { imgSrc: 'images/skincare1.jpg', description: 'Gentle Face Scrub' },
-    { imgSrc: 'images/skincare2.jpg', description: 'Soothing Face Mask' },
-  ],
-  hairCare: [
-    { imgSrc: 'images/haircare1.jpg', description: 'Deep Conditioning Treatment' },
-    { imgSrc: 'images/haircare2.jpg', description: 'Herbal Hair Rinse' },
-  ],
-};
 
