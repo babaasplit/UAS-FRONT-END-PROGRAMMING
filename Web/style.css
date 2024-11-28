@@ -22,7 +22,6 @@ h1 {
   margin-right: auto; /* Membuat jarak otomatis dengan elemen lainnya */
 }
 
-
 form .form-control {
   border: 2px solid #fff;
   transition: border-color 0.3s ease;
@@ -33,7 +32,6 @@ form .form-control:focus {
   outline: none;
   box-shadow: 0 0 5px rgba(128, 189, 255, 0.5);
 }
-
 
 /* About Section */
 .profile-box {
@@ -109,7 +107,6 @@ form .form-control:focus {
   margin-top: 0;
 }
 
-
 .modal-dialog {
   display: flex;
   align-items: center;
@@ -133,7 +130,6 @@ form .form-control:focus {
   transform: translate(-50%, -50%);
   z-index: 1050;
 }
-
 
 .btn-primary {
   background-color: #4CAF50;
@@ -167,11 +163,10 @@ form .form-control:focus {
 }
 
 .card img {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: 200px;
   object-fit: cover;
 }
-
 
 .category img {
   width: 100px;
@@ -179,8 +174,16 @@ form .form-control:focus {
   border-radius: 50%;
   object-fit: cover;
 }
+
 .sidebar img {
   width: 100%;
   border-radius: 50%;
 }
 
+/* Recipe Page */
+.img-recipe {
+  width: 400px;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
