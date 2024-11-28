@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
   <link rel="stylesheet" href="style.css">
   <script src="app.js"></script>
 </head>
@@ -66,84 +67,82 @@
   </nav>
 
   <!-- Page Content -->
-<div ng-show="currentPage === 'home'" class="container py-5">
-  <h2 class="text-center mt-5 display-4">Welcome to Thrive Soul</h2>
-  <p class="text-center mb-5 lead">Explore a healthier, balanced lifestyle through beauty, food, therapy, and more.</p>
+  <div ng-show="currentPage === 'home'" class="container py-5">
+    <h2 class="text-center mt-5 display-4">Welcome to Thrive Soul</h2>
+    <p class="text-center mb-5 lead">Explore a healthier, balanced lifestyle through beauty, food, therapy, and more.</p>
 
-  <!-- Trending Recipes Section -->
-  <div class="trending-recipes mt-5">
-    <h2 class="text-center mb-4 display-5">Trending Recipes</h2>
-    <p class="text-center mb-5">Check out the recipes our readers love most!</p>
-    <div class="row g-4">
-      <div class="col-lg-3 col-md-4 col-sm-6 d-flex" ng-repeat="recipe in trendingRecipes">
-        <div class="card shadow-sm rounded-3 border-0 overflow-hidden">
-          <img ng-src="{{recipe.imgSrc}}" class="card-img-top rounded-top" alt="Recipe Image">
-          <div class="card-body d-flex flex-column justify-content-between">
-            <h5 class="card-title text-center">{{recipe.title}}</h5>
-            <p class="card-text text-center">{{recipe.description}}</p>
-            <a href="#" class="btn btn-secondary btn-sm mt-auto w-100">View Recipe</a>
+    <!-- Trending Recipes Section -->
+    <div class="trending-recipes mt-5">
+      <h2 class="text-center mb-4 display-5">Trending Recipes</h2>
+      <p class="text-center mb-5">Check out the recipes our readers love most!</p>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-4 col-sm-6 d-flex" ng-repeat="recipe in trendingRecipes">
+          <div class="card shadow-sm rounded-3 border-0 overflow-hidden">
+            <img ng-src="{{recipe.imgSrc}}" class="card-img-top rounded-top" alt="Recipe Image">
+            <div class="card-body d-flex flex-column justify-content-between">
+              <h5 class="card-title text-center">{{recipe.title}}</h5>
+              <p class="card-text text-center">{{recipe.description}}</p>
+              <a ng-click="navigateToRecipe(recipe.id)" class="btn btn-secondary btn-sm mt-auto w-100">View Recipe</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Beauty Recipes Section -->
+    <div class="beauty-recipes mt-5 bg-light py-4 rounded">
+      <h2 class="text-center mb-4 display-5">Beauty Recipes</h2>
+      <p class="text-center mb-5">Revolutionize your beauty routine by opting for DIY skincare formulas, bath soaks, and body recipes.</p>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-4 col-sm-6 d-flex" ng-repeat="recipe in beautyRecipes">
+          <div class="card shadow-sm rounded-3 border-0 overflow-hidden">
+            <img ng-src="{{recipe.imgSrc}}" class="card-img-top rounded-top" alt="Beauty Recipe Image">
+            <div class="card-body d-flex flex-column justify-content-between">
+              <h5 class="card-title text-center">{{recipe.title}}</h5>
+              <p class="card-text text-center">{{recipe.description}}</p>
+              <a ng-click="navigateToRecipe(recipe.id)" class="btn btn-secondary btn-sm mt-auto w-100">View Recipe</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Haircare Recipes Section -->
+    <div class="haircare-recipes mt-5">
+      <h2 class="text-center mb-4 display-5">Haircare Recipes</h2>
+      <p class="text-center mb-5">Discover the best DIY haircare formulas to nourish, repair, and style your hair naturally.</p>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-4 col-sm-6 d-flex" ng-repeat="recipe in haircareRecipes">
+          <div class="card shadow-sm rounded-3 border-0 overflow-hidden">
+            <img ng-src="{{recipe.imgSrc}}" class="card-img-top rounded-top" alt="Haircare Recipe Image">
+            <div class="card-body d-flex flex-column justify-content-between">
+              <h5 class="card-title text-center">{{recipe.title}}</h5>
+              <p class="card-text text-center">{{recipe.description}}</p>
+              <a ng-click="navigateToRecipe(recipe.id)" class="btn btn-secondary btn-sm mt-auto w-100">View Recipe</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Good for You Recipes Section -->
+    <div class="good-for-you-recipes mt-5 bg-light py-4 rounded">
+      <h2 class="text-center mb-4 display-5">Good for You Recipes</h2>
+      <p class="text-center mb-5">Explore healthy and delicious recipes that are good for your body and soul.</p>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-4 col-sm-6 d-flex" ng-repeat="recipe in goodForYouRecipes">
+          <div class="card shadow-sm rounded-3 border-0 overflow-hidden">
+            <img ng-src="{{recipe.imgSrc}}" class="card-img-top rounded-top" alt="Good for You Recipe Image">
+            <div class="card-body d-flex flex-column justify-content-between">
+              <h5 class="card-title text-center">{{recipe.title}}</h5>
+              <p class="card-text text-center">{{recipe.description}}</p>
+              <a ng-click="navigateToRecipe(recipe.id)" class="btn btn-secondary btn-sm mt-auto w-100">View Recipe</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- Beauty Recipes Section -->
-  <div class="beauty-recipes mt-5 bg-light py-4 rounded">
-    <h2 class="text-center mb-4 display-5">Beauty Recipes</h2>
-    <p class="text-center mb-5">Revolutionize your beauty routine by opting for DIY skincare formulas, bath soaks, and body recipes.</p>
-    <div class="row g-4">
-      <div class="col-lg-3 col-md-4 col-sm-6 d-flex" ng-repeat="recipe in beautyRecipes">
-        <div class="card shadow-sm rounded-3 border-0 overflow-hidden">
-          <img ng-src="{{recipe.imgSrc}}" class="card-img-top rounded-top" alt="Beauty Recipe Image">
-          <div class="card-body d-flex flex-column justify-content-between">
-            <h5 class="card-title text-center">{{recipe.title}}</h5>
-            <p class="card-text text-center">{{recipe.description}}</p>
-            <a href="#" class="btn btn-secondary btn-sm mt-auto w-100">View Recipe</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Haircare Recipes Section -->
-  <div class="haircare-recipes mt-5">
-    <h2 class="text-center mb-4 display-5">Haircare Recipes</h2>
-    <p class="text-center mb-5">Discover the best DIY haircare formulas to nourish, repair, and style your hair naturally.</p>
-    <div class="row g-4">
-      <div class="col-lg-3 col-md-4 col-sm-6 d-flex" ng-repeat="recipe in haircareRecipes">
-        <div class="card shadow-sm rounded-3 border-0 overflow-hidden">
-          <img ng-src="{{recipe.imgSrc}}" class="card-img-top rounded-top" alt="Haircare Recipe Image">
-          <div class="card-body d-flex flex-column justify-content-between">
-            <h5 class="card-title text-center">{{recipe.title}}</h5>
-            <p class="card-text text-center">{{recipe.description}}</p>
-            <a href="#" class="btn btn-secondary btn-sm mt-auto w-100">View Recipe</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Good for You Recipes Section -->
-  <div class="good-for-you-recipes mt-5 bg-light py-4 rounded">
-    <h2 class="text-center mb-4 display-5">Good for You Recipes</h2>
-    <p class="text-center mb-5">Explore healthy and delicious recipes that are good for your body and soul.</p>
-    <div class="row g-4">
-      <div class="col-lg-3 col-md-4 col-sm-6 d-flex" ng-repeat="recipe in goodForYouRecipes">
-        <div class="card shadow-sm rounded-3 border-0 overflow-hidden">
-          <img ng-src="{{recipe.imgSrc}}" class="card-img-top rounded-top" alt="Good for You Recipe Image">
-          <div class="card-body d-flex flex-column justify-content-between">
-            <h5 class="card-title text-center">{{recipe.title}}</h5>
-            <p class="card-text text-center">{{recipe.description}}</p>
-            <a href="#" class="btn btn-secondary btn-sm mt-auto w-100">View Recipe</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
   
   <!-- Page ABOUT-->
   <div ng-show="currentPage === 'about'" class="container">
@@ -154,32 +153,30 @@
         <img ng-src="{{About1.imgSrc}}" class="img-fluid" alt="About Image">
         <p>{{recipe.description}}</p>
         <h2>What You'll Find on thrive Soul<h2>
-            <P> We bring you the best in do-it-yourself beauty – from natural skin care tips to beauty-boosting recipes
-              – to help you glow from the inside out.</p>
-            <p>Thrive Soul is here to inspire natural beauty through self-care. With skincare tips, natural beauty
-              recipes, and relaxation guides, we help you discover your true glow from within. Experience peace,
-              balance,
-              and confidence—just like a day at the spa—all starting from the comfort of your own home..</p>
-            <p>
-              Thrive Soul is your guide to natural beauty and mindful living. Dive into holistic skincare rituals,
-              explore the benefits of essential oils, and uncover nature-inspired haircare solutions. Nourish your body
-              with wholesome recipes, embrace a sustainable lifestyle,
-              and create DIY projects that bring balance and beauty to your daily routine.
-              Each step is designed to help you glow, inside and out.</p>
-            <p>Discover the secrets to radiant skin through holistic skincare rituals and learn how essential oils can
-              transform your well-being.
-              From nature-inspired haircare solutions to nourishing recipes that enhance beauty from the inside out,
-              we’re here to guide you every step of the way.
-              </p>
-
-             <p>Looking to embrace a more sustainable lifestyle? Explore our simple, eco-friendly tips for toxin-free
-              living. For those who love to create, our DIY projects will inspire you to craft moments of calm and
-              beauty in your personal sanctuary.
-              At Thrive Soul, every idea, recipe, and ritual is designed to help you feel confident, balanced, and at
-              peace, as if you’ve just stepped out of a luxurious spa—without leaving the comfort of your home. Embrace
-              the journey to a healthier, happier you. </p>
-            <img ng-src="{{About3.imgSrc}}" class="img-fluid" alt="About Image">
+        <P> We bring you the best in do-it-yourself beauty – from natural skin care tips to beauty-boosting recipes
+            – to help you glow from the inside out.</p>
+        <p>Thrive Soul is here to inspire natural beauty through self-care. With skincare tips, natural beauty
+            recipes, and relaxation guides, we help you discover your true glow from within. Experience peace,
+            balance, and confidence—just like a day at the spa—all starting from the comfort of your own home..</p>
+        <p>
+          Thrive Soul is your guide to natural beauty and mindful living. Dive into holistic skincare rituals,
+          explore the benefits of essential oils, and uncover nature-inspired haircare solutions. Nourish your body
+          with wholesome recipes, embrace a sustainable lifestyle,
+          and create DIY projects that bring balance and beauty to your daily routine.
+          Each step is designed to help you glow, inside and out.</p>
+        <p>Discover the secrets to radiant skin through holistic skincare rituals and learn how essential oils can
+          transform your well-being. From nature-inspired haircare solutions to nourishing recipes that enhance beauty from the inside out,
+          we’re here to guide you every step of the way.
+        </p>
+        <p>Looking to embrace a more sustainable lifestyle? Explore our simple, eco-friendly tips for toxin-free
+            living. For those who love to create, our DIY projects will inspire you to craft moments of calm and
+            beauty in your personal sanctuary.At Thrive Soul, every idea, recipe, and ritual is designed to help you feel confident, balanced, and at
+            peace, as if you’ve just stepped out of a luxurious spa—without leaving the comfort of your home. Embrace
+            the journey to a healthier, happier you. 
+        </p>
+          <img ng-src="{{About3.imgSrc}}" class="img-fluid" alt="About Image">
       </div>
+
       <div class="col-md-3 grey-box">
         <div class="profile-box">
           <div class="image-container">
@@ -204,57 +201,54 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
-  </div>
   </div>
 
   <!-- Page BEAUTY -->
-<div ng-show="currentPage === 'beauty'" class="container beauty-page my-5">
-  <!-- Halaman Judul -->
-  <h1 class="text-center display-4 fw-bold mb-4">Beauty Recipe Index</h1>
-  <p class="text-center fs-5">
-    You don't need harsh chemicals to be a natural beauty. Just steal these gentle, back-to-basics recipes + DIYs to bring out your natural glow.
-  </p>
+  <div ng-show="currentPage === 'beauty'" class="container beauty-page my-5">
+    <!-- Halaman Judul -->
+    <h1 class="text-center display-4 fw-bold mb-4">Beauty Recipe Index</h1>
+    <p class="text-center fs-5">
+      You don't need harsh chemicals to be a natural beauty. Just steal these gentle, back-to-basics recipes + DIYs to bring out your natural glow.
+    </p>
 
-  <!-- Search Bar -->
-  <div class="d-flex justify-content-center my-4">
-    <form class="d-flex w-75" role="search">
-      <input type="text" ng-model="searchQuery" class="form-control form-control-lg rounded-pill px-4" placeholder="Search for a recipe + hit enter" required />
-      <button type="submit" class="btn btn-dark rounded-pill ms-3 px-4">SEARCH</button>
-    </form>
-  </div>
+    <!-- Search Bar -->
+    <div class="d-flex justify-content-center my-4">
+      <form class="d-flex w-75" role="search">
+        <input type="text" ng-model="searchQuery" class="form-control form-control-lg rounded-pill px-4" placeholder="Search for a recipe + hit enter" required />
+        <button type="submit" class="btn btn-dark rounded-pill ms-3 px-4">SEARCH</button>
+      </form>
+    </div>
 
-  <!-- Kategori Skin Care -->
-  <h2 class="text-center mt-5 mb-4">Skin Care</h2>
-  <div class="row row-cols-1 row-cols-md-4 g-4">
-    <div class="col" ng-repeat="item in beautyCategories.skinCare | filter:searchQuery">
-      <div class="card h-100 text-center border-0 shadow-sm">
-        <img ng-src="{{item.imgSrc}}" class="card-img-top rounded-circle mx-auto mt-3" alt="{{item.description}}" style="width: 150px; height: 150px; object-fit: cover;" />
-        <div class="card-body">
-          <p class="card-text fw-semibold">{{item.description}}</p>
-          <button class="btn btn-outline-dark btn-sm rounded-pill">View Recipe</button>
+    <!-- Kategori Skin Care -->
+    <h2 class="text-center mt-5 mb-4">Skin Care</h2>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <div class="col" ng-repeat="recipe in skinCare | filter:searchQuery">
+        <div class="card h-100 text-center border-0 shadow-sm">
+          <img ng-src="{{recipe.imgSrc}}" class="card-img-top rounded-circle mx-auto mt-3" alt="{{recipe.description}}" style="width: 150px; height: 150px; object-fit: cover;" />
+          <div class="card-body">
+            <p class="card-text fw-semibold">{{recipe.description}}</p>
+            <button class="btn btn-outline-dark btn-sm rounded-pill" ng-click="navigateToRecipe(recipe.id)">View Recipe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kategori Hair Care -->
+    <h2 class="text-center mt-5 mb-4">Hair Care</h2>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <div class="col" ng-repeat="recipe in hairCare | filter:searchQuery">
+        <div class="card h-100 text-center border-0 shadow-sm">
+          <img ng-src="{{recipe.imgSrc}}" class="card-img-top rounded-circle mx-auto mt-3" alt="{{recipe.description}}" style="width: 150px; height: 150px; object-fit: cover;" />
+          <div class="card-body">
+            <p class="card-text fw-semibold">{{recipe.description}}</p>
+            <button class="btn btn-outline-dark btn-sm rounded-pill" ng-click="navigateToRecipe(recipe.id)">View Recipe</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- Kategori Hair Care -->
-  <h2 class="text-center mt-5 mb-4">Hair Care</h2>
-  <div class="row row-cols-1 row-cols-md-4 g-4">
-    <div class="col" ng-repeat="item in beautyCategories.hairCare | filter:searchQuery">
-      <div class="card h-100 text-center border-0 shadow-sm">
-        <img ng-src="{{item.imgSrc}}" class="card-img-top rounded-circle mx-auto mt-3" alt="{{item.description}}" style="width: 150px; height: 150px; object-fit: cover;" />
-        <div class="card-body">
-          <p class="card-text fw-semibold">{{item.description}}</p>
-          <button class="btn btn-outline-dark btn-sm rounded-pill">View Recipe</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 
   <!-- Food Page Section -->
   <div ng-show="currentPage === 'food'" class="container py-5">
@@ -341,6 +335,7 @@
           </div>
         </div>
       </div>
+
       <!--TAylor Profile -->
       <div class="col-md-4 sidebar">
         <img src="images/Therapy1.png
@@ -350,42 +345,38 @@
            our top therapeutic tips, techniques, and recipes for achieving natural beauty and holistic wellness.</p>
         <a href="#">More about me →</a>
       </div>
+    </div>
   </div>
-</div>
-  
 
-  <!-- Trigger Button -->
-
-<div class="modal fade" id="subscribeModal" tabindex="-1" role="dialog" ng-class="{'show d-block': showSubscribePopup}">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" ng-click="closePopup()">&times;</button>
-      </div>
-      <div class="modal-body text-center">
-        <img src="images/logo.jpg" alt="Thrive Soul Logo" class="img-fluid" style="max-width: 120px;" />
-        <h5 class="mt-3">Get Our Weekly Newsletter!</h5>
-        <p class="text-muted">
-          Get updates on the latest posts and more from Thrive Soul straight to your inbox.
-        </p>
-        <form ng-submit="subscribe()">
-          <div class="form-group">
-            <input type="email" ng-model="subscriber.email" class="form-control" placeholder="Your Email..." required />
+  <!-- Subscriber Button -->
+  <div class="modal fade" id="subscribeModal" tabindex="-1" role="dialog" ng-class="{'show d-block': showSubscribePopup}">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" ng-click="closePopup()">&times;</button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="images/logo.jpg" alt="Thrive Soul Logo" class="img-fluid" style="max-width: 120px;" />
+          <h5 class="mt-3">Get Our Weekly Newsletter!</h5>
+          <p class="text-muted">
+            Get updates on the latest posts and more from Thrive Soul straight to your inbox.
+          </p>
+          <form ng-submit="subscribe()">
+            <div class="form-group">
+              <input type="email" ng-model="subscriber.email" class="form-control" placeholder="Your Email..." required />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Subscribe</button>
+          </form>
+          <div class="form-check mt-3">
+            <input type="checkbox" class="form-check-input" id="consent" />
+            <label class="form-check-label" for="consent">
+              I consent to receiving emails and personalized ads.
+            </label>
           </div>
-          <button type="submit" class="btn btn-primary btn-block">Subscribe</button>
-        </form>
-        <div class="form-check mt-3">
-          <input type="checkbox" class="form-check-input" id="consent" />
-          <label class="form-check-label" for="consent">
-            I consent to receiving emails and personalized ads.
-          </label>
         </div>
       </div>
     </div>
   </div>
-</div>
-
-
 
   <footer class="footer mt-5" ng-hide="currentPage === 'login' || currentPage === 'subscribe'">
     <div class="container">
@@ -413,11 +404,11 @@
         <!-- Follow Us Section -->
         <div class="col-md-4 mb-4">
           <h5>Follow Us</h5>
-          <div class="d-flex">
+          <div class="d-flex" style="gap: 1rem;">
             <a href="#" class="social-link me-3"><i class="fab fa-facebook"></i></a>
             <a href="#" class="social-link me-3"><i class="fab fa-instagram"></i></a>
             <a href="#" class="social-link me-3"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+            <a href="#" class="social-link me-3"><i class="fab fa-pinterest"></i></a>
           </div>
         </div>
       </div>
@@ -429,10 +420,8 @@
     </div>
   </footer>
 
-
   <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
