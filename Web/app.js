@@ -125,3 +125,83 @@ app.controller('MainController', function($scope, $window) {
   ];
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Tangkap elemen form dan input
+  const searchForm = document.querySelector('.d-flex');
+  const searchInput = document.querySelector('.form-control');
+
+  // Simulasi data resep
+  const recipes = {
+    trendingRecipes: [
+      { id: 1, title: "Avocado Salad", description: "Fresh and healthy salad.", imgSrc: "avocado.jpg" },
+      { id: 2, title: "Spaghetti Bolognese", description: "Classic Italian pasta.", imgSrc: "spaghetti.jpg" }
+    ],
+    beautyRecipes: [
+      { id: 3, title: "Cucumber Mask", description: "Hydrating face mask.", imgSrc: "cucumber.jpg" },
+      { id: 4, title: "Honey Scrub", description: "Natural exfoliation.", imgSrc: "honey.jpg" }
+    ],
+    haircareRecipes: [
+      { id: 5, title: "Coconut Oil Treatment", description: "Deep conditioning for hair.", imgSrc: "coconut.jpg" },
+      { id: 6, title: "Aloe Vera Gel", description: "Soothing scalp care.", imgSrc: "aloe.jpg" }
+    ],
+    goodForYouRecipes: [
+      { id: 7, title: "Quinoa Bowl", description: "Nutrient-packed and delicious.", imgSrc: "quinoa.jpg" },
+      { id: 8, title: "Smoothie Blend", description: "Energy-boosting drink.", imgSrc: "smoothie.jpg" }
+    ]
+  };
+
+  // Fungsi untuk mencari resep
+  function searchRecipes(keyword) {
+    const keywordLower = keyword.toLowerCase();
+    const results = [];
+
+    // Gabungkan semua kategori resep dan cari yang cocok
+    Object.keys(recipes).forEach(category => {
+      results.push(
+        ...recipes[category].filter(recipe =>
+          recipe.title.toLowerCase().includes(keywordLower)
+        )
+      );
+    });
+
+    return results;
+  }
+
+  // Event listener untuk form submit
+  searchForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // Mencegah refresh halaman
+
+    const query = searchInput.value.trim();
+
+    if (query) {
+      const results = searchRecipes(query);
+      displaySearchResults(results);
+    } else {
+      alert("Masukkan kata kunci pencarian.");
+    }
+  });
+
+  // Fungsi untuk menampilkan hasil pencarian
+  function displaySearchResults(results) {
+    const container = document.querySelector(".container");
+    container.innerHTML = `
+      <h2 class="text-center mt-5 display-4">Search Results</h2>
+      <p class="text-center mb-5 lead">Menampilkan ${results.length} hasil untuk pencarian Anda.</p>
+      <div class="row g-4">
+        ${results.map(recipe => `
+          <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
+            <div class="card shadow-sm rounded-3 border-0 overflow-hidden">
+              <img src="${recipe.imgSrc}" class="card-img-top rounded-top" alt="${recipe.title}">
+              <div class="card-body d-flex flex-column justify-content-between">
+                <h5 class="card-title text-center">${recipe.title}</h5>
+                <p class="card-text text-center">${recipe.description}</p>
+                <a href="#!" class="btn btn-secondary btn-sm mt-auto w-100">View Recipe</a>
+              </div>
+            </div>
+          </div>
+        `).join("")}
+      </div>
+    `;
+  }
+});
