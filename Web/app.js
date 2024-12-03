@@ -200,17 +200,108 @@ app.controller('MainController', function($scope, $window, AuthService) {
     { name: 'Dessert', image: 'images/dessert.jpg' }
   ];
 });
+//search Home
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Tangkap elemen form dan input
   const searchForm = document.querySelector('.d-flex');
   const searchInput = document.querySelector('.form-control');
 
+  // Simulasi data resep
   const recipes = {
     trendingRecipes: [
-      { id: 1, title: 'Craft Your Own Signature Scents with Essential Oil Blends', imageUrl: 'images/recipe1.jpg' },
-      { id: 2, title: 'Natural Acne Solutions: 12 DIY Masks for Clearer Skin', imageUrl: 'images/recipe2.jpg' },
-      { id: 3, title: 'Exfoliate Naturally: Homemade Face Scrubs Using Pantry Staples', imageUrl: 'images/recipe3.jpg' },
-      { id: 4, title: 'Fresh Juicing Guide: 3 Simple Recipes for a Healthy Boost', imageUrl: 'images/recipe4.jpg' },
+      { id: 1, title: "Craft", description: "Craft your own Signature with Essentials Oil Blends.", imgSrc: "images/recipe1.jpg" },
+      { id: 2, title: "Natural", description: "Natural AcneNatural Acne Solutions: 12 DIY Masks for Clearer Skin.", imgSrc: "images/recipe2.jpg" },
+      { id: 3, title: "Exfoliate Naturally", description: "Exfoliate Naturally: HomeMade face Scrbs Using Pantry Staples", imgSrc: "images/recipe3.jpg" },
+      { id: 4, title: "Fresh Juicing Guide", description: "Fresh Juicing Guide: 3 Simple Recipes for a Healthy Boost", imgSrc: "images/recipe4.jpg" }
+    ],
+    beautyRecipes: [
+      { id: 1, title: " DIY Travel Beauty", description: "10 DIY Travel Beauty Recipes to Pack for Your Next Trip", imgSrc: "images/beauty1.jpg" },
+      { id: 2, title: "5 Face Massage", description: "5 Face Massage Techniques for a Youthful Glow.", imgSrc: "images/beauty2.jpg" },
+      { id: 3, title: "Skin Flooding", description: "What You Need to Know About the Viral Skin Flooding Trend", imgSrc: "images/beauty3.jpg" },
+      { id: 4, title: "The Benefits of Green", description: "The Benefits of Green Tea for Your Skin and Hair", imgSrc: "images/beauty4.jpg" }
+      
+    ],
+    haircareRecipes: [
+      { id: 1, title: "Hair Masks", description: "10 DIY Hair Masks to Repair Damaged Hair.", imgSrc: "images/haircare1.jpg" },
+      { id: 2, title: "Natural Oils", description: "5 Natural Oils for Hair Growth and Thickness", imgSrc: "images/haircare2.jpg" },
+      { id: 3, title: "Make Your Own", description: "How to Make Your Own Dry Shampoo at Home", imgSrc: "images/haircare3.jpg" },
+      { id: 4, title: "The Best Scalp", description: "The Best Scalp Treatments for Healthy Hair.", imgSrc: "images/haircare4.jpg" }
+    ],
+    goodForYouRecipes: [
+      { id: 7, title: "Avocado Toast with Egg", description: "Avocado Toast with Egg - A perfect healthy breakfast!", imgSrc: "images/good1.jpg" },
+      { id: 7, title: "Berry Smoothie Bowl ", description: "Berry Smoothie Bowl - Refreshing and full of antioxidants.", imgSrc: "images/good2.jpg" },
+      { id: 7, title: "Quinoa Salad ", description: "Quinoa Salad - Packed with protein and fresh veggies.", imgSrc: "images/good3.jpg" },
+      { id: 7, title: "Dark Chocolate Energy Bites", description: "Nutrient-packed and delicious.", imgSrc: "images/good4.jpg" },
     ]
   };
+
+  // Fungsi untuk mencari resep
+  function searchRecipes(keyword) {
+    const keywordLower = keyword.toLowerCase();
+    const results = [];
+
+    //  kategori resep dan cari yang cocok
+    Object.keys(recipes).forEach(category => {
+      results.push(
+        ...recipes[category].filter(recipe =>
+          recipe.title.toLowerCase().includes(keywordLower)
+        )
+      );
+    });
+
+    return results;
+  }
+
+  //  untuk form submit
+  searchForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // Mencegah refresh halaman
+
+    const query = searchInput.value.trim();
+
+    if (query) {
+      const results = searchRecipes(query);
+      displaySearchResults(results);
+    } else {
+      alert("Masukan Kata yang ingin anda cari.");
+    }
+  });
+
+  // Fungsi untuk menampilkan hasil pencarian
+  function displaySearchResults(results) {
+        const container = document.querySelector(".container");
+
+        // jika tidak ada hasil pencarian
+        if (results.length === 0) {
+            container.innerHTML = `
+                <h2 class="text-center mt-5 display-4">No Results Found</h2>
+                <p class="text-center mb-5 lead">We couldn't find any recipes matching your search. Try different keywords.</p>
+                <div class="text-center">
+                    <button class="btn btn-primary" onclick="window.location.reload()">Back to Home</button>
+                </div>
+            `;
+            return;
+        }
+
+        // Jika ada hasil, tampilkan
+        container.innerHTML = `
+            <h2 class="text-center mt-5 display-4">Search Results</h2>
+            <p class="text-center mb-5 lead">Found ${results.length} result(s) for your search.</p>
+            <div class="row g-4">
+                  ${results.map((recipe, index) => `
+                <div class="${results.length === 1 ? 'col-lg-6 col-md-8' : 'col-lg-3 col-md-4 col-sm-6'} d-flex">
+                    <div class="card shadow-sm rounded-3 border-0 overflow-hidden">
+                        <img src="${recipe.imgSrc}" class="card-img-top rounded-top" alt="${recipe.title}">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title text-center">${recipe.title}</h5>
+                            <p class="card-text text-center text-truncate" title="${recipe.description}">${recipe.description}</p>
+                            <a href="#!" class="btn btn-secondary btn-sm mt-auto w-100">View Recipe</a>
+                        </div>
+                    </div>
+                </div>
+            `).join("")}
+        </div>
+
+        `;
+    }
 });
