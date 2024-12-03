@@ -1,12 +1,25 @@
-const { Sequelize } = require('sequelize');
+const pgp = require('pg-promise')();
 require('dotenv').config();
-const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
- host: process.env.DB_HOST,
- dialect: 'postgres',
- logging: false, // Set to true for SQL logs
+
+// Membuat koneksi menggunakan pg-promise
+const db = pgp({
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  database: process.env.DB_NAME,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
 });
-sequelize
- .authenticate()
- .then(() => console.log('Connected to PostgreSQL database'))
- .catch((err) => console.error('Unable to connect to the database:', err));
-module.exports = sequelize;
+
+// Mengekspor koneksi database
+module.exports = db;
+
+// Mengecek koneksi database
+const checkDbConnection = async () => {
+  try {
+    const res = await db.query('SELECT NOW()'); // Gunakan db.query untuk memeriksa koneksi
+    console.log('Database connection successful:', res);  // Tampilkan hasil koneksi
+  } catch (err) {
+    console.error('Database connection failed:', err.message);
+  }
+};
+checkDbConnection();

@@ -1,10 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-// Example route
-router.post('/login', (req, res) => {
-  res.send('Login route');
-});
+// Import the controller functions
+const { register, login } = require('../controllers/authController');
 
-// Exporting the router
+// POST route for registration
+router.post('/register', register);
+
+// POST route for login
+router.post('/login', login);
+
 module.exports = router;
