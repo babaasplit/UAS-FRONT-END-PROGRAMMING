@@ -11,6 +11,10 @@ h1 {
   cursor: pointer;
 }
 
+.sticky-top {
+  z-index: 1020; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
 /* Hover effect for nav links */
 .nav-link:hover {
   color: #007BFF !important;
