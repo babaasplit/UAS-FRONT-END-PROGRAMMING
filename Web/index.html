@@ -19,7 +19,7 @@
 <body ng-app="thriveSoulApp" ng-controller="MainController">
 
   <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm py-4 sticky-top">
+  <nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm py-4">
     <div class="container">
       <!-- Brand (Logo TS) -->
       <a class="navbar-brand fw-bold text-uppercase text-dark fs-3" href="#" ng-click="navigate('home')">
@@ -77,18 +77,23 @@
       <h2 class="text-center mb-4 display-5">Trending Recipes</h2>
       <p class="text-center mb-5">Check out the recipes our readers love most!</p>
       <div class="row g-4">
+        <!-- Loop melalui data trendingRecipes -->
         <div class="col-lg-3 col-md-4 col-sm-6 d-flex" ng-repeat="recipe in trendingRecipes">
           <div class="card shadow-sm rounded-3 border-0 overflow-hidden">
-            <img ng-src="{{recipe.imgSrc}}" class="card-img-top rounded-top" alt="Recipe Image">
+            <!-- Gambar dari database -->
+            <img ng-src="{{recipe.imageurl}}" class="card-img-top rounded-top" alt="Recipe Image">
             <div class="card-body d-flex flex-column justify-content-between">
+              <!-- Judul dan deskripsi -->
               <h5 class="card-title text-center">{{recipe.title}}</h5>
               <p class="card-text text-center">{{recipe.description}}</p>
+              <!-- Tombol untuk melihat resep -->
               <a ng-click="navigateToRecipe(recipe.id)" class="btn btn-secondary btn-sm mt-auto w-100">View Recipe</a>
             </div>
           </div>
         </div>
       </div>
     </div>
+    
 
     <!-- Beauty Recipes Section -->
     <div class="beauty-recipes mt-5 bg-light py-4 rounded">
@@ -144,6 +149,46 @@
       </div>
     </div>
   </div>
+
+  <!-- Add Recipe Button -->
+<div class="text-center mt-5">
+  <button class="btn btn-primary btn-lg" ng-click="openAddRecipeModal('trending')">Add Recipe</button>
+</div>
+
+<!-- Modal for Adding Recipe -->
+<div class="modal fade" ng-class="{'show d-block': showAddRecipeModal}" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add New Recipe</h5>
+        <button type="button" class="close" ng-click="closeAddRecipeModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form ng-submit="addRecipe()">
+          <div class="form-group">
+            <label for="recipeTitle">Recipe Title</label>
+            <input type="text" id="recipeTitle" class="form-control" ng-model="newRecipe.title" required>
+          </div>
+          <div class="form-group">
+            <label for="recipeDescription">Description</label>
+            <textarea id="recipeDescription" class="form-control" ng-model="newRecipe.description" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="recipeIngredients">Ingredients (comma-separated)</label>
+            <input type="text" id="recipeIngredients" class="form-control" ng-model="newRecipe.ingredients" required>
+          </div>
+          <div class="form-group">
+            <label for="recipeImageUrl">Image URL</label>
+            <input type="text" id="recipeImageUrl" class="form-control" ng-model="newRecipe.imageUrl" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Add Recipe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
   
   <!-- Page ABOUT-->
   <div ng-show="currentPage === 'about'" class="container">
