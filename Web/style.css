@@ -270,3 +270,18 @@ form .form-control:focus {
   object-fit: cover;
   object-position: center;
 }
+
+.delete-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.delete-btn:hover {
+  background-color: darkred;
+}
+

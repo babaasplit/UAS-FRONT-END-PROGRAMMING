@@ -144,16 +144,35 @@ app.controller('MainController', function($scope, $window, AuthService, $http) {
  
    // Login function
    $scope.login = function() {
-     AuthService.login($scope.loginData)
-       .then(function(response) {
-         alert('Login Successful');
-         // Simpan token atau informasi pengguna di sini jika diperlukan
-         $scope.closeLoginModal();
-       })
-       .catch(function(error) {
-         alert('Login Failed: ' + (error.data.message || 'Unknown error'));
-       });
-   };
+    AuthService.login($scope.loginData)
+      .then(function(response) {
+        alert('Login Successful');
+        // Simpan token atau informasi pengguna di sini jika diperlukan
+        $scope.closeLoginModal();  // Menutup modal login setelah login berhasil
+      })
+      .catch(function(error) {
+        alert('Login Failed: ' + (error.data.message || 'Unknown error'));
+      });
+  };
+  
+
+   // Function to delete recipe
+   $scope.deleteRecipe = function(recipeId) {
+    // Send DELETE request to the backend
+    $http.delete('http://localhost:3000/recipes/' + recipeId)
+      .then(function(response) {
+        // If the deletion is successful, remove the recipe from the local array
+        $scope.trendingRecipes = $scope.trendingRecipes.filter(function(recipe) {
+          return recipe.id !== recipeId;
+        });
+        alert('Recipe deleted successfully!');
+      })
+      .catch(function(error) {
+        console.error('Error deleting recipe:', error);
+        alert('Failed to delete recipe.');
+      });
+  };
+  
  
    // Close Login Modal
    $scope.closeLoginModal = function() {

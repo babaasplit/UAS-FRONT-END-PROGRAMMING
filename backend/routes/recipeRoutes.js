@@ -1,11 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const recipeController = require('../controllers/recipeController');  // Import controller untuk resep
+const { getAllRecipes, createRecipe, deleteRecipe, updateRecipe } = require('../controllers/recipeController');
 
-// Mendapatkan semua resep
-router.get('/recipes', recipeController.getAllRecipes);
+// Rute untuk mendapatkan semua resep
+router.get('/recipes', getAllRecipes);
 
-// Menambahkan resep baru
-router.post('/recipes', recipeController.createRecipe);
+// Rute untuk membuat resep baru
+router.post('/recipes', createRecipe);
+
+// Rute untuk menghapus resep berdasarkan ID
+router.delete('/recipes/:id', deleteRecipe);
+
+// Rute untuk memperbarui resep berdasarkan ID
+router.put('/recipes/:id', updateRecipe);
 
 module.exports = router;

@@ -72,27 +72,30 @@
     <h2 class="text-center mt-5 display-4">Welcome to Thrive Soul</h2>
     <p class="text-center mb-5 lead">Explore a healthier, balanced lifestyle through beauty, food, therapy, and more.</p>
 
-    <!-- Trending Recipes Section -->
-    <div class="trending-recipes mt-5">
-      <h2 class="text-center mb-4 display-5">Trending Recipes</h2>
-      <p class="text-center mb-5">Check out the recipes our readers love most!</p>
-      <div class="row g-4">
-        <!-- Loop melalui data trendingRecipes -->
-        <div class="col-lg-3 col-md-4 col-sm-6 d-flex" ng-repeat="recipe in trendingRecipes">
-          <div class="card shadow-sm rounded-3 border-0 overflow-hidden">
-            <!-- Gambar dari database -->
-            <img ng-src="{{recipe.imageurl}}" class="card-img-top rounded-top" alt="Recipe Image">
-            <div class="card-body d-flex flex-column justify-content-between">
-              <!-- Judul dan deskripsi -->
-              <h5 class="card-title text-center">{{recipe.title}}</h5>
-              <p class="card-text text-center">{{recipe.description}}</p>
-              <!-- Tombol untuk melihat resep -->
-              <a ng-click="navigateToRecipe(recipe.id)" class="btn btn-secondary btn-sm mt-auto w-100">View Recipe</a>
-            </div>
-          </div>
+   <!-- Trending Recipes Section -->
+<div class="trending-recipes mt-5">
+  <h2 class="text-center mb-4 display-5">Trending Recipes</h2>
+  <p class="text-center mb-5">Check out the recipes our readers love most!</p>
+  <div class="row g-4">
+    <!-- Loop melalui data trendingRecipes -->
+    <div class="col-lg-3 col-md-4 col-sm-6 d-flex" ng-repeat="recipe in trendingRecipes">
+      <div class="card shadow-sm rounded-3 border-0 overflow-hidden">
+        <!-- Gambar dari database -->
+        <img ng-src="{{recipe.imageurl}}" class="card-img-top rounded-top" alt="Recipe Image">
+        <div class="card-body d-flex flex-column justify-content-between">
+          <!-- Judul dan deskripsi -->
+          <h5 class="card-title text-center">{{recipe.title}}</h5>
+          <p class="card-text text-center">{{recipe.description}}</p>
+          <!-- Tombol untuk melihat resep -->
+          <a ng-click="navigateToRecipe(recipe.id)" class="btn btn-secondary btn-sm mt-auto w-100">View Recipe</a>
+          <!-- Tombol untuk menghapus resep -->
+          <button ng-click="deleteRecipe(recipe.id)" class="btn btn-danger btn-sm mt-2 w-100">Delete Recipe</button>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
     
 
     <!-- Beauty Recipes Section -->
@@ -148,15 +151,14 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Add Recipe Button -->
-<div class="text-center mt-5" ng-if="currentPage === 'home'">
+     <!-- Add Recipe Button -->
+<div class="text-center mt-5">
   <button class="btn btn-primary btn-lg" ng-click="openAddRecipeModal('trending')">Add Recipe</button>
 </div>
 
 <!-- Modal for Adding Recipe -->
-<div class="modal fade" ng-if="showAddRecipeModal && currentPage === 'trending'" tabindex="-1" role="dialog">
+<div class="modal fade" ng-class="{'show d-block': showAddRecipeModal}" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -187,6 +189,8 @@
     </div>
   </div>
 </div>
+
+  </div>
 
 
   
