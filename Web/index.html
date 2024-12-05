@@ -151,12 +151,12 @@
   </div>
 
   <!-- Add Recipe Button -->
-<div class="text-center mt-5">
+<div class="text-center mt-5" ng-if="currentPage === 'home'">
   <button class="btn btn-primary btn-lg" ng-click="openAddRecipeModal('trending')">Add Recipe</button>
 </div>
 
 <!-- Modal for Adding Recipe -->
-<div class="modal fade" ng-class="{'show d-block': showAddRecipeModal}" tabindex="-1" role="dialog">
+<div class="modal fade" ng-if="showAddRecipeModal && currentPage === 'trending'" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
